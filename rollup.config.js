@@ -1,22 +1,22 @@
-import path from 'path'
-import { babel } from '@rollup/plugin-babel'
-import replace from '@rollup/plugin-replace'
-import commonjs from '@rollup/plugin-commonjs'
-import typescript from 'rollup-plugin-typescript2'
-import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import { nodeResolve } from '@rollup/plugin-node-resolve'
-import cleanup from 'rollup-plugin-cleanup'
-import { terser } from 'rollup-plugin-terser'
+import path from 'path';
+import { babel } from '@rollup/plugin-babel';
+import replace from '@rollup/plugin-replace';
+import commonjs from '@rollup/plugin-commonjs';
+import typescript from 'rollup-plugin-typescript2';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import cleanup from 'rollup-plugin-cleanup';
+import { terser } from 'rollup-plugin-terser';
 
-const pkg = require(path.resolve('./package.json'))
-const babelOptions = require(path.resolve('./babel.config.js'))
-const extensions = ['.js', '.jsx', '.ts', '.tsx']
+const pkg = require(path.resolve('./package.json'));
+const babelOptions = require(path.resolve('./babel.config.js'));
+const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
 export default {
   input: 'src/index.ts',
   output: [
     { file: pkg.main, format: 'cjs', plugins: [terser()] },
-    { file: pkg.module, format: 'esm' }
+    { file: pkg.module, format: 'esm', plugins: [terser()] },
   ],
   plugins: [
     commonjs(),
@@ -30,7 +30,7 @@ export default {
     }),
     nodeResolve({
       mainFields: ['module', 'main', 'jsnext', 'browser'],
-      extensions
+      extensions,
     }),
     typescript({
       check: false,
@@ -42,7 +42,7 @@ export default {
     }),
     replace({
       '{{PACKAGE_VERSION}}': pkg.version,
-      preventAssignment: true
+      preventAssignment: true,
     }),
-  ]
-}
+  ],
+};

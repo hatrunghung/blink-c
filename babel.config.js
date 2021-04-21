@@ -1,5 +1,6 @@
 module.exports = {
   presets: [
+    '@babel/preset-typescript',
     [
       '@babel/preset-env',
       {
@@ -17,7 +18,7 @@ module.exports = {
   ],
   env: {
     production: {
-      plugins: [['react-remove-properties', { properties: [/data-test/u] }]]
-    }
-  }
-}
+      plugins: [['react-remove-properties', { properties: [/data-test/u] }]],
+    },
+  },
+};
