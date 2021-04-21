@@ -9,7 +9,9 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "",
   "license": "ISC",
@@ -31,14 +33,19 @@
     "@storybook/addon-a11y": "^6.2.8",
     "@storybook/addon-actions": "^6.2.8",
     "@storybook/addon-docs": "^6.2.8",
+    "@storybook/addon-essentials": "^6.2.8",
     "@storybook/addon-jest": "^6.2.8",
     "@storybook/addon-knobs": "^6.2.8",
+    "@storybook/addon-links": "^6.2.8",
     "@storybook/addon-viewport": "^6.2.8",
     "@storybook/react": "^6.2.8",
     "@types/jest": "^26.0.22",
+    "@types/prop-types": "^15.7.3",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
     "@types/styled-components": "^5.1.9",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.3",
@@ -46,7 +53,16 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-react-remove-properties": "^0.3.0",
     "babel-plugin-styled-components": "^1.12.0",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-jest": "^24.3.5",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^6.0.0",
     "jest": "^26.6.3",
+    "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "react": "^17.0.2",
     "react-docgen-typescript": "^1.22.0",
@@ -64,5 +80,15 @@
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --color --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
