@@ -26,7 +26,9 @@ const TestComponent: React.FunctionComponent<TestComponentProps> = ({
   theme,
 }) => (
   <StyledDiv data-testid="test-component" theme={theme}>
-    <StyledHeading className="heading">The test component</StyledHeading>
+    <StyledHeading className="heading">
+      This is the test component
+    </StyledHeading>
     <StyledDescription>Made with love by Hung</StyledDescription>
   </StyledDiv>
 );
