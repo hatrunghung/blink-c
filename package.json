@@ -15,7 +15,18 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "author": "",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --color --fix",
+      "prettier --write"
+    ]
+  },
+  "author": "Hung Ha Trung",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.13.14",
