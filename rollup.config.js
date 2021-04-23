@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import path from 'path';
 import { babel } from '@rollup/plugin-babel';
 import replace from '@rollup/plugin-replace';
