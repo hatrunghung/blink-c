@@ -1,5 +1,5 @@
 // declaration file for Typescript definition for styled-components
-import 'styled-components'
+import 'styled-components';
 
 declare module 'styled-components' {
   type Hue = Record<number | string, string> | string;
@@ -47,6 +47,8 @@ declare module 'styled-components' {
       system: string;
     };
     fontSizes: {
+      xxxs: string;
+      xxs: string;
       xs: string;
       sm: string;
       md: string;
