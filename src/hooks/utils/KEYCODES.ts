@@ -1,0 +1,25 @@
+const KEYS = {
+  ALT: 'Alt',
+  ADD: '+',
+  BACKSPACE: 'Backspace',
+  COMMA: ',',
+  DECIMAL_POINT: '.',
+  DELETE: 'Delete',
+  DIVIDE: '/',
+  DOWN: 'ArrowDown',
+  ENTER: 'Enter',
+  END: 'End',
+  ESCAPE: 'Escape',
+  HOME: 'Home',
+  LEFT: 'ArrowLeft',
+  MULTIPLY: '*',
+  PAGE_DOWN: 'PageDown',
+  PAGE_UP: 'PageUp',
+  RIGHT: 'ArrowRight',
+  SPACE: ' ',
+  SUBTRACT: '-',
+  TAB: 'Tab',
+  UP: 'ArrowUp',
+};
+
+export default KEYS;
