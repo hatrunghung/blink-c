@@ -1,3 +1,7 @@
+// hooks
+export { useButtonGroup, useSelection } from './hooks';
+
+// components
 import TestComponent from './TestComponent/TestComponent';
 
 export { TestComponent };
