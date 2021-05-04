@@ -9,6 +9,11 @@ const COMPONENT_ID = 'Grid.row';
 export interface IStyledRowProps extends ThemeProps<DefaultTheme> {
   gutters?: SPACE;
   flexDirection?: DIRECTION;
+  flexDirectionXs?: DIRECTION;
+  flexDirectionSm?: DIRECTION;
+  flexDirectionMd?: DIRECTION;
+  flexDirectionLg?: DIRECTION;
+  flexDirectionXl?: DIRECTION;
   justifyContent?: JUSTIFY_CONTENT;
   justifyContentXs?: JUSTIFY_CONTENT;
   justifyContentSm?: JUSTIFY_CONTENT;
@@ -57,6 +62,7 @@ function getSizeStyles(props: IStyledRowProps) {
 }
 
 function getFlexStyles(
+  direction?: DIRECTION,
   justifyContent?: JUSTIFY_CONTENT,
   alignItems?: ALIGN_ITEMS,
   wrap?: WRAP,
@@ -85,6 +91,7 @@ function getFlexStyles(
   }
 
   return css`
+    flex-direction: ${direction};
     justify-content: ${justifyContentValue};
     align-items: ${alignItemsValue};
     flex-wrap: ${wrap};
@@ -93,6 +100,7 @@ function getFlexStyles(
 
 function getResponsiveStyles(
   minWidth: string,
+  responsiveDirection: DIRECTION,
   responsiveJustifyContent: JUSTIFY_CONTENT,
   responsiveAlignItems: ALIGN_ITEMS,
   responsiveWrap: WRAP,
@@ -100,6 +108,7 @@ function getResponsiveStyles(
   return css`
     @media (min-width: ${minWidth}) {
       ${getFlexStyles(
+        responsiveDirection,
         responsiveJustifyContent,
         responsiveAlignItems,
         responsiveWrap,
@@ -116,11 +125,18 @@ export const StyledRow = styled.div.attrs<IStyledRowProps>({
 
   ${props => props.debug && getColorStyles(props)};
   ${props => getSizeStyles(props)};
-  ${props => getFlexStyles(props.justifyContent, props.alignItems, props.wrap)};
+  ${props =>
+    getFlexStyles(
+      props.flexDirection,
+      props.justifyContent,
+      props.alignItems,
+      props.wrap,
+    )};
 
   ${props =>
     getResponsiveStyles(
       props.theme.breakpoints.xs,
+      props.flexDirectionXs,
       props.justifyContentXs,
       props.alignItemsXs,
       props.wrapXs,
@@ -129,6 +145,7 @@ export const StyledRow = styled.div.attrs<IStyledRowProps>({
   ${props =>
     getResponsiveStyles(
       props.theme.breakpoints.sm,
+      props.flexDirectionSm,
       props.justifyContentSm,
       props.alignItemsSm,
       props.wrapSm,
@@ -137,6 +154,7 @@ export const StyledRow = styled.div.attrs<IStyledRowProps>({
   ${props =>
     getResponsiveStyles(
       props.theme.breakpoints.md,
+      props.flexDirectionMd,
       props.justifyContentMd,
       props.alignItemsMd,
       props.wrapMd,
@@ -145,6 +163,7 @@ export const StyledRow = styled.div.attrs<IStyledRowProps>({
   ${props =>
     getResponsiveStyles(
       props.theme.breakpoints.lg,
+      props.flexDirectionLg,
       props.justifyContentLg,
       props.alignItemsLg,
       props.wrapLg,
@@ -153,6 +172,7 @@ export const StyledRow = styled.div.attrs<IStyledRowProps>({
   ${props =>
     getResponsiveStyles(
       props.theme.breakpoints.xl,
+      props.flexDirectionXl,
       props.justifyContentXl,
       props.alignItemsXl,
       props.wrapXl,
