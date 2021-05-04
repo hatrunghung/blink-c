@@ -9,8 +9,9 @@
  * @return {Function} the event handler to add to an element
  */
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 export default function composeEventHandler(...fns: (Function | undefined)[]) {
-  return function (event: any, ...args: any) {
+  return (event: any, ...args: any[]) => {
     return fns.some(fn => {
       fn && fn(event, ...args);
 
