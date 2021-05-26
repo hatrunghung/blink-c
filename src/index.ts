@@ -1,3 +1,6 @@
+// theme
+export { default as DEFAULT_THEME } from './theme';
+
 // hooks
 export { useButtonGroup, useSelection } from './hooks';
 
@@ -24,3 +27,6 @@ export type {
   IToggleButtonProps,
   IToggleIconButtonProps,
 } from './Button';
+
+export { Grid, Row, Col } from './Grid';
+export type { IGridProps, IRowProps, IColProps } from './Grid';
