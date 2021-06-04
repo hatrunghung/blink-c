@@ -63,10 +63,10 @@ function getSizeStyles(props: IStyledButtonProps & ThemeProps<DefaultTheme>) {
     let fontSize;
 
     if (props.size === SIZE.SMALL) {
-      fontSize = props.theme.fontSizes.sm;
+      fontSize = props.theme.fontSizes.xs;
       padding = `${props.theme.space.sm}px`;
     } else {
-      fontSize = props.theme.fontSizes.md;
+      fontSize = props.theme.fontSizes.sm;
 
       if (props.size === SIZE.LARGE) {
         padding = `${props.theme.space.lg}px`;
