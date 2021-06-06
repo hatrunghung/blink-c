@@ -74,12 +74,12 @@ function getSizeStyles(props: IStyledColProps) {
 }
 
 function getFlexStyles(
+  size: BREAKPOINT | undefined,
+  alignSelf: ALIGN_SELF | undefined,
+  textAlign: TEXT_ALIGN | undefined,
+  offset: GRID_NUMBER | undefined,
+  order: GRID_NUMBER | undefined,
   props: IStyledColProps,
-  size?: BREAKPOINT,
-  alignSelf?: ALIGN_SELF,
-  textAlign?: TEXT_ALIGN,
-  offset?: GRID_NUMBER,
-  order?: GRID_NUMBER,
 ) {
   const margin = offset && `${math(`${offset} / ${props.columns} * 100`)}%`;
   let flexBasis;
@@ -133,23 +133,23 @@ function getFlexStyles(
 }
 
 function getResponsiveStyles(
-  props: IStyledColProps,
   minWidth: string,
-  responsiveSize?: BREAKPOINT,
-  responsiveAlignSelf?: ALIGN_SELF,
-  responsiveTextAlign?: TEXT_ALIGN,
-  responsiveOffset?: GRID_NUMBER,
-  responsiveOrder?: GRID_NUMBER,
+  responsiveSize: BREAKPOINT | undefined,
+  responsiveAlignSelf: ALIGN_SELF | undefined,
+  responsiveTextAlign: TEXT_ALIGN | undefined,
+  responsiveOffset: GRID_NUMBER | undefined,
+  responsiveOrder: GRID_NUMBER | undefined,
+  props: IStyledColProps,
 ) {
   return css`
     @media (min-width: ${minWidth}) {
       ${getFlexStyles(
-        props,
         responsiveSize,
         responsiveAlignSelf,
         responsiveTextAlign,
         responsiveOffset,
         responsiveOrder,
+        props,
       )};
     }
   `;
@@ -166,7 +166,6 @@ export const StyledCol = styled.div.attrs<IStyledColProps>({
 
   ${props =>
     getFlexStyles(
-      props,
       !props.size && (props.xs || props.sm || props.md || props.lg || props.xl)
         ? undefined
         : props.size || false,
@@ -174,61 +173,62 @@ export const StyledCol = styled.div.attrs<IStyledColProps>({
       props.textAlign,
       props.offset,
       props.order,
+      props,
     )}
 
   ${props =>
     getResponsiveStyles(
-      props,
       props.theme.breakpoints.xs,
       props.xs,
       props.alignSelfXs,
       props.textAlignXs,
       props.offsetXs,
       props.orderXs,
+      props,
     )};
 
   ${props =>
     getResponsiveStyles(
-      props,
       props.theme.breakpoints.sm,
       props.sm,
       props.alignSelfSm,
       props.textAlignSm,
       props.offsetSm,
       props.orderSm,
+      props,
     )};
 
   ${props =>
     getResponsiveStyles(
-      props,
       props.theme.breakpoints.md,
       props.md,
       props.alignSelfMd,
       props.textAlignMd,
       props.offsetMd,
       props.orderMd,
+      props,
     )};
 
   ${props =>
     getResponsiveStyles(
-      props,
       props.theme.breakpoints.lg,
       props.lg,
       props.alignSelfLg,
       props.textAlignLg,
       props.offsetLg,
       props.orderLg,
+      props,
     )};
 
   ${props =>
     getResponsiveStyles(
-      props,
       props.theme.breakpoints.xl,
       props.xl,
       props.alignSelfXl,
       props.textAlignXl,
       props.offsetXl,
       props.orderXl,
+      props,
     )};
 
   ${props => getComponentStyles(COMPONENT_ID, props)}

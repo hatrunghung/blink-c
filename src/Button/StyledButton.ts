@@ -14,7 +14,7 @@ export interface IStyledButtonProps {
   isPrimary?: boolean;
   isDanger?: boolean;
   isLink?: boolean;
-  isPill?: boolean;
+  shape?: 'round' | 'pill';
   isStretched?: boolean;
   disabled?: boolean;
   focusInset: boolean;
@@ -30,8 +30,10 @@ const SIZE = {
 function getBorderRadius(props: IStyledButtonProps & ThemeProps<DefaultTheme>) {
   if (props.isLink) {
     return 0;
-  } else if (props.isPill) {
+  } else if (props.shape === 'pill') {
     return '20px';
+  } else if (props.shape === 'round') {
+    return '50%';
   }
 
   return props.theme.borderRadius.md;
@@ -267,11 +269,11 @@ function getButtonGroupStyles(
     }
 
     &:first-of-type:not(:last-of-type) ${StyledIcon} {
-      margin-${rtl ? 'left' : 'right'}: ${props.isPill && '-2px'};
+      margin-${rtl ? 'left' : 'right'}: ${props.shape === 'pill' && '-2px'};
     }
 
     &:last-of-type:not(:first-of-type) ${StyledIcon} {
-      margin-${rtl ? 'right' : 'left'}: ${props.isPill && '-2px'};
+      margin-${rtl ? 'right' : 'left'}: ${props.shape === 'pill' && '-2px'};
     }
   `;
 }

@@ -100,10 +100,10 @@ function getFlexStyles(
 
 function getResponsiveStyles(
   minWidth: string,
-  responsiveDirection: DIRECTION,
-  responsiveJustifyContent: JUSTIFY_CONTENT,
-  responsiveAlignItems: ALIGN_ITEMS,
-  responsiveWrap: WRAP,
+  responsiveDirection?: DIRECTION,
+  responsiveJustifyContent?: JUSTIFY_CONTENT,
+  responsiveAlignItems?: ALIGN_ITEMS,
+  responsiveWrap?: WRAP,
 ) {
   return css`
     @media (min-width: ${minWidth}) {
