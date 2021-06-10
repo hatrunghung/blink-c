@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import path from 'path';
-import { babel } from '@rollup/plugin-babel';
+import babel from '@rollup/plugin-babel';
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
@@ -17,7 +17,7 @@ export default {
   input: 'src/index.ts',
   output: [
     { file: pkg.main, format: 'cjs', plugins: [terser()] },
-    { file: pkg.module, format: 'esm', plugins: [terser()] },
+    { file: pkg.module, format: 'esm' },
   ],
   plugins: [
     commonjs(),
