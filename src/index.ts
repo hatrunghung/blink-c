@@ -1,5 +1,7 @@
 // theme
 export { default as DEFAULT_THEME } from './theme';
+export { ThemeProvider } from './theme/ThemeProvider';
+export type { IThemeProviderProps } from './theme/ThemeProvider';
 
 // hooks
 export { useButtonGroup, useSelection } from './hooks';

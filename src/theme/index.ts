@@ -1,5 +1,6 @@
 import { DefaultTheme } from 'styled-components';
 import PALETTE from './palette';
+import { fontStack } from './utils';
 
 const BASE = 4;
 
@@ -43,25 +44,25 @@ const colors = {
 };
 
 const fonts = {
-  mono: [
+  mono: fontStack([
     'SFMono-Regular' /* macOS */,
     'Consolas' /* Windows */,
-    '"Liberation Mono"' /* Ubuntu */,
+    'Liberation Mono' /* Ubuntu */,
     'Menlo',
     'Courier',
     'monospace',
-  ].join(','),
-  system: [
+  ]),
+  system: fontStack([
     'system-ui',
     '-apple-system',
     'BlinkMacSystemFont',
-    '"Segoe UI"',
-    'Roboto',
+    'Segoe UI',
     'Ubuntu',
-    '"Helvetica Neue"',
+    'Helvetica',
+    'Helvetica Neue',
     'Arial',
     'sans-serif',
-  ].join(''),
+  ]),
 };
 
 /* Major Third Typescale */

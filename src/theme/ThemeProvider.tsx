@@ -10,7 +10,7 @@ export interface IThemeProviderProps extends Partial<ThemeProps<DefaultTheme>> {
   theme?: DefaultTheme;
 }
 
-const ThemeProvider: React.FC<IThemeProviderProps> = ({
+export const ThemeProvider: React.FC<IThemeProviderProps> = ({
   children,
   ...props
 }) => {
