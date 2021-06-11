@@ -84,5 +84,6 @@
   "php.suggest.basic": false,
   "eslint.codeAction.showDocumentation": {
     "enable": true
-  }
+  },
+  "editor.tabSize": 2
 }

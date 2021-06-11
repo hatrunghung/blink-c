@@ -17,7 +17,7 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isDanger?: boolean;
   isBasic?: boolean;
   isStretched?: boolean;
-  isPill?: boolean;
+  shape?: 'round' | 'pill';
   isLink?: boolean;
   isSelected?: boolean;
   focusInset?: boolean;
@@ -64,7 +64,7 @@ Button.propTypes = {
   isPrimary: PropTypes.bool,
   isDanger: PropTypes.bool,
   isBasic: PropTypes.bool,
-  isPill: PropTypes.bool,
+  shape: PropTypes.oneOf(['round', 'pill']),
   isLink: PropTypes.bool,
   isStretched: PropTypes.bool,
   focusInset: PropTypes.bool,

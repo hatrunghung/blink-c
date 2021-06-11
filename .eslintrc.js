@@ -46,5 +46,11 @@ module.exports = {
         },
       },
     },
+    {
+      files: ['**/*.stories.@(js|jsx|ts|tsx)'],
+      rules: {
+        'react/prop-types': 'off',
+      },
+    },
   ],
 };
