@@ -17,7 +17,7 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isDanger?: boolean;
   isBasic?: boolean;
   isStretched?: boolean;
-  shape?: 'round' | 'pill';
+  shape?: 'normal' | 'round' | 'pill';
   isLink?: boolean;
   isSelected?: boolean;
   focusInset?: boolean;
@@ -79,6 +79,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   size: 'medium',
+  shape: 'normal',
 };
 
 export interface IIconProps extends SVGAttributes<SVGElement> {

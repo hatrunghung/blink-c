@@ -10,9 +10,9 @@ function getIconColorStyles(
   props: IStyledButtonProps & ThemeProps<DefaultTheme>,
 ) {
   const shade = 600;
-  const baseColor = getColors('neutralHue', shade, props.theme);
-  const hoverColor = getColors('neutralHue', shade + 100, props.theme);
-  const activeColor = getColors('neutralHue', shade + 200, props.theme);
+  const baseColor = getColors('neutral', shade, props.theme);
+  const hoverColor = getColors('neutral', shade + 100, props.theme);
+  const activeColor = getColors('neutral', shade + 200, props.theme);
 
   return css`
     color: ${baseColor};

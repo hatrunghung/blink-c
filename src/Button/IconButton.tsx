@@ -9,7 +9,7 @@ export interface IIconButtonProps
   isPrimary?: boolean;
   isDanger?: boolean;
   isBasic?: boolean;
-  isPill?: boolean;
+  shape?: 'normal' | 'round' | 'pill';
   focusInset?: boolean;
   isRotated?: boolean;
   size?: 'small' | 'medium' | 'large';
@@ -39,14 +39,14 @@ IconButton.propTypes = {
   isPrimary: PropTypes.bool,
   isDanger: PropTypes.bool,
   isBasic: PropTypes.bool,
-  isPill: PropTypes.bool,
+  shape: PropTypes.oneOf(['normal', 'pill', 'round']),
   focusInset: PropTypes.bool,
   isRotated: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
 IconButton.defaultProps = {
-  isPill: true,
+  shape: 'round',
   isBasic: true,
   size: 'medium',
 };

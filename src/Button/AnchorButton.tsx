@@ -1,6 +1,7 @@
 import React, { AnchorHTMLAttributes, RefAttributes, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { StyledAnchorButton } from './StyledAnchorButton';
+import { StyledExternalIcon } from './StyledExternalIcon';
 
 export interface IAnchorButtonProps
   extends AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -24,6 +25,7 @@ const AnchorButton: React.FunctionComponent<
   return (
     <StyledAnchorButton ref={ref} {...(anchorButtonProps as any)}>
       {children}
+      {isExternal && <StyledExternalIcon />}
     </StyledAnchorButton>
   );
 });
