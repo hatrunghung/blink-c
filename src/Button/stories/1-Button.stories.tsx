@@ -2,6 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { Button } from '../';
 import { Col, Grid, Row } from '../../Grid';
+import { Download16, ChevronDown16 } from 'blinkicon';
 
 export default {
   title: 'Components/Button/Button',
@@ -19,6 +20,8 @@ export const Default: Story = ({
   focusInset,
   disabled,
   size,
+  startIcon,
+  endIcon,
 }) => (
   <Grid>
     <Row>
@@ -34,7 +37,22 @@ export const Default: Story = ({
           disabled={disabled}
           size={size}
         >
+          {startIcon && (
+            <Button.StartIcon>
+              <Download16
+                style={{
+                  width: '16px',
+                  height: '16px',
+                }}
+              />
+            </Button.StartIcon>
+          )}
           {buttonText}
+          {endIcon && (
+            <Button.EndIcon>
+              <ChevronDown16 />
+            </Button.EndIcon>
+          )}
         </Button>
       </Col>
     </Row>
@@ -42,7 +60,7 @@ export const Default: Story = ({
 );
 
 Default.args = {
-  buttonText: 'Test Button',
+  buttonText: 'Download',
 };
 
 Default.argTypes = {
@@ -50,6 +68,12 @@ Default.argTypes = {
     control: 'text',
   },
   disabled: {
+    control: 'boolean',
+  },
+  startIcon: {
+    control: 'boolean',
+  },
+  endIcon: {
     control: 'boolean',
   },
 };

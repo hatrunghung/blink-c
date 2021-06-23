@@ -14,7 +14,7 @@ export interface IStyledButtonProps {
   isPrimary?: boolean;
   isDanger?: boolean;
   isLink?: boolean;
-  shape?: 'round' | 'pill';
+  shape?: 'normal' | 'round' | 'pill';
   isStretched?: boolean;
   disabled?: boolean;
   focusInset: boolean;
@@ -347,4 +347,5 @@ export const StyledButton = styled.button.attrs<IStyledButtonProps>(props => ({
 
 StyledButton.defaultProps = {
   theme: DEFAULT_THEME,
+  shape: 'normal',
 };
