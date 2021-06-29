@@ -8,7 +8,6 @@ export interface IStyledButtonLabelProps {
   accordionType?: 'basic' | 'borderless' | 'ghost';
   isDisabled?: boolean;
   isExpanded?: boolean;
-  isCollapsible?: boolean;
 }
 
 export const StyledButtonLabel = styled.button.attrs<IStyledButtonLabelProps>({

@@ -4,12 +4,26 @@ export { ThemeProvider } from './theme/ThemeProvider';
 export type { IThemeProviderProps } from './theme/ThemeProvider';
 
 // hooks
-export { useButtonGroup, useSelection } from './hooks';
+export { useAccordion, useButtonGroup, useSelection } from './hooks';
 
 // components
 import TestComponent from './TestComponent/TestComponent';
 
 export { TestComponent };
+
+export {
+  Accordion,
+  AccordionSection,
+  AccordionHeader,
+  AccordionLabel,
+  AccordionPanel,
+} from './Accordion';
+
+export type {
+  IAccordionProps,
+  IAccordionHeaderProps,
+  IAccordionSectionProps,
+} from './Accordion';
 
 export {
   AnchorButton,

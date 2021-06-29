@@ -8,7 +8,6 @@ export interface IStyledHeaderProps {
   isFocused?: boolean;
   isDisabled?: boolean;
   isExpanded?: boolean;
-  isCollapsible?: boolean;
   accordionType?: 'basic' | 'ghost' | 'borderless';
 }
 
@@ -82,7 +81,7 @@ export const StyledHeader = styled.div.attrs<IStyledHeaderProps>({
   ${props => getColorStyles(props)};
 
   &:hover {
-    cursor: ${props => (props.isCollapsible || !props.isExpanded) && 'pointer'};
+    cursor: ${props => !props.isExpanded && 'pointer'};
   }
 
   ${props => getComponentStyles(COMPONENT_ID, props)};

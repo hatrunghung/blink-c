@@ -69,9 +69,7 @@ function getColorStyles(props: IStyledPanelProps & ThemeProps<DefaultTheme>) {
 export const StyledPanel = styled.div.attrs<IStyledPanelProps>({
   'component-blink-id': COMPONENT_ID,
 })<IStyledPanelProps>`
-  transition: ${props => props.isAnimated && 'max-height 0.25s ease-in-out'};
-
-  max-height: ${props => props.isExpanded && '0 !important'};
+  display: ${props => !props.isExpanded && 'none'};
   overflow: hidden;
   line-height: ${props =>
     getLineHeight(props.theme.space.base * 5, props.theme.fontSizes.md)};

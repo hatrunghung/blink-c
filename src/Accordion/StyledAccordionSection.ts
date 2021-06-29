@@ -7,6 +7,7 @@ const COMPONENT_ID = 'Accordion.accordion_section';
 export interface IStyledAccordionSection {
   accordionType: 'basic' | 'borderless' | 'ghost';
   sectionIndex?: number;
+  isDisabled?: boolean;
 }
 
 function getBorderBottomStyles(

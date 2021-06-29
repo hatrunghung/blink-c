@@ -1,3 +1,10 @@
+export { useAccordion } from './useAccordion';
+export type {
+  IUseAccordionProps,
+  IUseAccordionPropGetters,
+  IUseAccordionReturnValue,
+} from './useAccordion';
+
 export { useButtonGroup } from './useButtonGroup';
 export type {
   IUseButtonGroupPropGetters,

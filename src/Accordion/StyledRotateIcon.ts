@@ -19,8 +19,8 @@ export const StyledRotateIcon = styled(({ children, isExpanded, ...props }) =>
   'component-blink-id': COMPONENT_ID,
 })`
   transform: ${props =>
-    props.isExpanded && `rotate(${props.theme.rtl ? '+' : '-'}90deg)`};
-  transition: transform 0.25s ease-in-out, color 0.1s ease-in-out;
+    !props.isExpanded && `rotate(${props.theme.rtl ? '+' : '-'}90deg)`};
+  transition: transform 0.1s ease-in-out;
   box-sizing: content-box;
   width: ${props => props.theme.iconSizes.md};
   height: ${props => props.theme.iconSizes.md};
