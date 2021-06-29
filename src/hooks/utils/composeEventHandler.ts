@@ -11,7 +11,8 @@
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export default function composeEventHandler(...fns: (Function | undefined)[]) {
-  return (event: any, ...args: any[]) => {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  return (event: any, ...args: any[]): boolean => {
     return fns.some(fn => {
       fn && fn(event, ...args);
 
