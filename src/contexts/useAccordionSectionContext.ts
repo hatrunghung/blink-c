@@ -8,7 +8,7 @@ export const AccordionSectionContext = createContext<number | undefined>(
   undefined,
 );
 
-export const useAccordionSectionContext = () => {
+export const useAccordionSectionContext = (): number => {
   const context = useContext(AccordionSectionContext);
 
   if (context === undefined) {

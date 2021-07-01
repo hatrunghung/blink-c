@@ -16,17 +16,17 @@ Blackpink and working to fit into real world project.
 ### Components
 
 - [ ] Accordion
-- [ ] Autocomplete
 - [x] Buttons
 - [ ] Breadcrumb
 - [ ] Card
 - [ ] ComboBox
 - [ ] Dropdown
 - [ ] Form
-- [ ] Grid
+- [x] Grid
 - [ ] Input
 - [ ] Modal
 - [ ] Slider
 - [ ] Stepper
 - [ ] Tab
 - [ ] Toggle
+- [ ] Tooltip

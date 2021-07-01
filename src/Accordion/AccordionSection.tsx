@@ -20,11 +20,8 @@ export const AccordionSection: FunctionComponent = forwardRef<
   HTMLAttributes<HTMLDivElement>
 >((props, ref) => {
   const { accordionType, currentIndexRef } = useAccordionContext();
-  // console.log('current', currentIndexRef);
   const sectionIndexRef = useRef(currentIndexRef.current++);
-  // console.log('section index ref', sectionIndexRef);
   const sectionIndex = sectionIndexRef.current;
-  // console.log('section index', sectionIndex);
 
   return (
     <AccordionSectionContext.Provider value={sectionIndex}>
