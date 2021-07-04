@@ -28,5 +28,6 @@ Blackpink and working to fit into real world project.
 - [ ] Slider
 - [ ] Stepper
 - [ ] Tab
+- [ ] Tag
 - [ ] Toggle
 - [ ] Tooltip
