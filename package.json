@@ -67,7 +67,7 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-react-remove-properties": "^0.3.0",
     "babel-plugin-styled-components": "^1.12.0",
-    "blinkicon": "^1.0.0",
+    "blinkicon": "^1.1.0",
     "chalk": "^2.4.2",
     "eslint": "^7.24.0",
     "eslint-config-prettier": "^8.2.0",
