@@ -1,6 +1,11 @@
 import { DefaultTheme } from 'styled-components';
 import PALETTE from './palette';
-import { fontStack } from './utils';
+
+function fontStack(fonts: string[]): string {
+  return fonts
+    .map(font => (font.includes(' ') ? `"${font}"` : font))
+    .join(', ');
+}
 
 const BASE = 4;
 
