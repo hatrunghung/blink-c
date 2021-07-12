@@ -46,3 +46,13 @@ export type {
 
 export { Grid, Row, Col } from './Grid';
 export type { IGridProps, IRowProps, IColProps } from './Grid';
+
+export {
+  Stepper,
+  Step,
+  StepLabel,
+  StepContent,
+  StepTitle,
+  StepDescription,
+} from './Stepper';
+export type { IStepperProps } from './Stepper';
