@@ -47,7 +47,6 @@ export function useAccordion({
   // handle toggle accordion onClick
   const toggle = useCallback(
     (index: number) => {
-      console.log('kicked here', index);
       setExpanded(() => {
         if (expanded !== index) return index;
         return undefined;

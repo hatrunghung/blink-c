@@ -12,8 +12,6 @@ export const AccordionLabel: FunctionComponent &
   } = useAccordionContext();
   const sectionIndex = useAccordionSectionContext();
 
-  // console.log('sectionIndex in label', sectionIndex);
-
   const isExpanded = expandedSection === sectionIndex;
 
   return (

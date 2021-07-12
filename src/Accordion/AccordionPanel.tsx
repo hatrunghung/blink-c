@@ -14,7 +14,6 @@ export const AccordionPanel: FunctionComponent &
   const sectionIndex = useAccordionSectionContext();
 
   const isExpanded = expandedSection === sectionIndex;
-  console.log('is expanded', isExpanded);
 
   return (
     <StyledPanel
