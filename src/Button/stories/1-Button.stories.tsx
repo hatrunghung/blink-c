@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { Button } from '../';
 import { Col, Grid, Row } from '../../Grid';
-import { Download16, ChevronDown16 } from 'blinkicon';
+import { Download, ChevronDown } from 'blinkicon';
 
 export default {
   title: 'Components/Button/Button',
@@ -39,7 +39,7 @@ export const Default: Story = ({
         >
           {startIcon && (
             <Button.StartIcon>
-              <Download16
+              <Download
                 style={{
                   width: '16px',
                   height: '16px',
@@ -50,7 +50,7 @@ export const Default: Story = ({
           {buttonText}
           {endIcon && (
             <Button.EndIcon>
-              <ChevronDown16 />
+              <ChevronDown />
             </Button.EndIcon>
           )}
         </Button>

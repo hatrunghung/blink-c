@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { External16 } from 'blinkicon';
+import { External } from 'blinkicon';
 import { getComponentStyles } from '../theme/utils';
 import DEFAULT_THEME from '../theme';
 
 const COMPONENT_ID = 'Button.external_icon';
 
-export const StyledExternalIcon = styled(External16).attrs({
+export const StyledExternalIcon = styled(External).attrs({
   'component-blink-id': COMPONENT_ID,
 })`
   transform: ${props => props.theme.rtl && 'scaleX(-1)'};

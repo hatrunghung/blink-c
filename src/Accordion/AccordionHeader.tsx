@@ -11,7 +11,7 @@ import { StyledHeader } from './StyledHeader';
 import { COMPONENT_ID as buttonBlinkId } from './StyledButtonLabel';
 import callAllFunction from '../hooks/utils/callAllFunction';
 import { StyledRotateIcon } from './StyledRotateIcon';
-import { ChevronDown16 } from 'blinkicon';
+import { ChevronDown } from 'blinkicon';
 
 export interface IAccordionHeaderProps {
   children?: ReactNode;
@@ -67,7 +67,7 @@ export const AccordionHeader: FunctionComponent = ({
       })}
     >
       <StyledRotateIcon isExpanded={isExpanded} isAnimated={isAnimated}>
-        <ChevronDown16 />
+        <ChevronDown />
       </StyledRotateIcon>
       {props.children}
     </StyledHeader>

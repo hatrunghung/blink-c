@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { IconButton } from '../';
 import { Col, Grid, Row } from '../../Grid';
-import { Delete16, Send16, Home16, ChevronDown16 } from 'blinkicon';
+import { Delete, Send, Home, ChevronDown } from 'blinkicon';
 import styled from 'styled-components';
 
 export default {
@@ -40,7 +40,7 @@ export const Default: Story = ({
             disabled={disabled}
             focusInset={focusInset}
           >
-            <ChevronDown16 />
+            <ChevronDown />
           </IconButton>
         </StyledDiv>
         <StyledDiv>
@@ -56,7 +56,7 @@ export const Default: Story = ({
             disabled={disabled}
             focusInset={focusInset}
           >
-            <Delete16 />
+            <Delete />
           </IconButton>
         </StyledDiv>
         <StyledDiv>
@@ -72,7 +72,7 @@ export const Default: Story = ({
             disabled={disabled}
             focusInset={focusInset}
           >
-            <Send16 />
+            <Send />
           </IconButton>
         </StyledDiv>
         <StyledDiv>
@@ -88,7 +88,7 @@ export const Default: Story = ({
             disabled={disabled}
             focusInset={focusInset}
           >
-            <Home16 />
+            <Home />
           </IconButton>
         </StyledDiv>
       </Col>
