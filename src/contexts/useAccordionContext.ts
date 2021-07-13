@@ -5,7 +5,7 @@ export interface IAccordionContext extends IUseAccordionPropGetters {
   level?: number;
   accordionType?: 'basic' | 'borderless' | 'ghost';
   currentIndexRef?: MutableRefObject<number>;
-  expandedSection?: number;
+  expandedSection?: number[];
   isAnimated?: boolean;
 }
 

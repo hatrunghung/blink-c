@@ -15,6 +15,7 @@ export interface IAccordionProps
   level: number;
   accordionType?: 'basic' | 'borderless' | 'ghost';
   isAnimated?: boolean;
+  isExpandable?: boolean;
   children?: ReactNode;
   onChange?: (index: number) => void;
 }
@@ -24,6 +25,7 @@ export const Accordion: FunctionComponent & HTMLAttributes<HTMLDivElement> = ({
   accordionType,
   isAnimated,
   onChange,
+  isExpandable,
   children,
   ...props
 }: IAccordionProps) => {
@@ -32,7 +34,7 @@ export const Accordion: FunctionComponent & HTMLAttributes<HTMLDivElement> = ({
     getButtonTriggerProps,
     getPanelProps,
     expandedSection,
-  } = useAccordion({ onChange });
+  } = useAccordion({ onChange, expandable: isExpandable });
 
   const currentIndexRef = useRef(0);
 
@@ -45,6 +47,7 @@ export const Accordion: FunctionComponent & HTMLAttributes<HTMLDivElement> = ({
       level,
       accordionType,
       isAnimated,
+      isExpandable,
       currentIndexRef,
       getHeaderProps,
       getButtonTriggerProps,
@@ -55,6 +58,7 @@ export const Accordion: FunctionComponent & HTMLAttributes<HTMLDivElement> = ({
       level,
       accordionType,
       isAnimated,
+      isExpandable,
       currentIndexRef,
       getHeaderProps,
       getButtonTriggerProps,

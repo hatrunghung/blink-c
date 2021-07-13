@@ -37,7 +37,7 @@ export const AccordionHeader: FunctionComponent = ({
 
   const sectionIndex = useAccordionSectionContext();
   const [isFocused, setIsFocused] = useState<boolean>(false);
-  const isExpanded = expandedSection === sectionIndex;
+  const isExpanded = expandedSection.includes(sectionIndex);
 
   const { onClick: onTriggerClick, onKeyDown } = getButtonTriggerProps({
     index: sectionIndex,

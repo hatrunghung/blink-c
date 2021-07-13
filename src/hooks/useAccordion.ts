@@ -6,6 +6,7 @@ import KEYS from './utils/KEYCODES';
 export interface IUseAccordionProps {
   idPrefix?: string;
   onChange?: (index: number) => void;
+  expandable?: boolean;
 }
 
 export interface IHeaderProps extends HTMLProps<any> {
@@ -31,32 +32,46 @@ export interface IUseAccordionPropGetters {
 }
 
 export interface IUseAccordionReturnValue extends IUseAccordionPropGetters {
-  expandedSection?: number;
+  expandedSection?: number[];
 }
 
 export function useAccordion({
   idPrefix,
   onChange,
+  expandable = true,
 }: IUseAccordionProps = {}): IUseAccordionReturnValue {
   const seed = useUIDSeed();
   const [prefix] = useState<string>(idPrefix || seed('accordion'));
-  const [expanded, setExpanded] = useState<number | undefined>(0);
+  const [expanded, setExpanded] = useState<number[] | undefined>([]);
   const triggerId = `${prefix}--trigger`;
   const panelId = `${prefix}--panel`;
 
-  // handle toggle accordion onClick
   const toggle = useCallback(
     (index: number) => {
-      setExpanded(() => {
-        if (expanded !== index) return index;
-        return undefined;
-      });
+      const isExpanded = expanded.includes(index);
+
+      if (!isExpanded) {
+        if (expandable) {
+          setExpanded(currentExpanded => currentExpanded.concat(index));
+        } else {
+          setExpanded(currentExpanded =>
+            currentExpanded.slice(currentExpanded.length).concat(index),
+          );
+        }
+      } else {
+        const indexPosition = expanded.indexOf(index);
+        setExpanded(currentExpanded =>
+          currentExpanded
+            .slice(0, indexPosition)
+            .concat(currentExpanded.slice(indexPosition + 1)),
+        );
+      }
 
       if (onChange) {
         onChange(index);
       }
     },
-    [expanded, setExpanded, onChange],
+    [expanded, setExpanded, expandable, onChange],
   );
 
   const getHeaderProps = ({
@@ -89,7 +104,7 @@ export function useAccordion({
       );
     }
 
-    const isExpanded = expanded === index;
+    const isExpanded = expanded.includes(index);
 
     return {
       id: `${triggerId}:${index}`,

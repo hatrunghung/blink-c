@@ -50,7 +50,7 @@ function getBorderStyles(props: IStyledPanelProps & ThemeProps<DefaultTheme>) {
 
 function getColorStyles(props: IStyledPanelProps & ThemeProps<DefaultTheme>) {
   const shade = 100;
-  const backgroundColor = getColors('neutral', shade + 200, props.theme);
+  const backgroundColor = getColors('neutral', shade, props.theme);
 
   let colorValue;
 

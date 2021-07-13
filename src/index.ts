@@ -7,10 +7,6 @@ export type { IThemeProviderProps } from './theme/ThemeProvider';
 export { useAccordion, useButtonGroup, useSelection } from './hooks';
 
 // components
-import TestComponent from './TestComponent/TestComponent';
-
-export { TestComponent };
-
 export {
   Accordion,
   AccordionSection,

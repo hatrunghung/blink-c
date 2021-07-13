@@ -12,7 +12,7 @@ export const AccordionLabel: FunctionComponent &
   } = useAccordionContext();
   const sectionIndex = useAccordionSectionContext();
 
-  const isExpanded = expandedSection === sectionIndex;
+  const isExpanded = expandedSection.includes(sectionIndex);
 
   return (
     <StyledButtonLabel
