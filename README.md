@@ -15,7 +15,7 @@ Blackpink and working to fit into real world project.
 
 ### Components
 
-- [ ] Accordion
+- [x] Accordion
 - [x] Buttons
 - [ ] Breadcrumb
 - [ ] Card
@@ -26,7 +26,7 @@ Blackpink and working to fit into real world project.
 - [ ] Input
 - [ ] Modal
 - [ ] Slider
-- [ ] Stepper
+- [x] Stepper
 - [ ] Tab
 - [ ] Tag
 - [ ] Toggle

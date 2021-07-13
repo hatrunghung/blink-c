@@ -64,7 +64,7 @@ Button.propTypes = {
   isPrimary: PropTypes.bool,
   isDanger: PropTypes.bool,
   isBasic: PropTypes.bool,
-  shape: PropTypes.oneOf(['round', 'pill']),
+  shape: PropTypes.oneOf(['normal', 'round', 'pill']),
   isLink: PropTypes.bool,
   isStretched: PropTypes.bool,
   focusInset: PropTypes.bool,

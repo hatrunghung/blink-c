@@ -23,6 +23,7 @@ const ToggleButton: React.FunctionComponent<
 ToggleButton.displayName = 'ToggleButton';
 
 ToggleButton.propTypes = {
+  ...Button.propTypes,
   isPressed: PropTypes.oneOf([true, false, 'mixed']),
 };
 
