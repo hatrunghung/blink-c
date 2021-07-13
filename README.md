@@ -16,8 +16,9 @@ Blackpink and working to fit into real world project.
 ### Components
 
 - [x] Accordion
-- [x] Buttons
+- [ ] Banner
 - [ ] Breadcrumb
+- [x] Buttons
 - [ ] Card
 - [ ] ComboBox
 - [ ] Dropdown
