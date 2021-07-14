@@ -23,7 +23,7 @@ export interface IAccordionProps
 export const Accordion: FunctionComponent & HTMLAttributes<HTMLDivElement> = ({
   level,
   accordionType,
-  isAnimated,
+  isAnimated = true,
   onChange,
   isExpandable,
   children,

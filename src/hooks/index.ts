@@ -5,6 +5,9 @@ export type {
   IUseAccordionReturnValue,
 } from './useAccordion';
 
+export { useBreadcrumb } from './useBreadcrumb';
+export type { IUseBreadCrumbReturnValue } from './useBreadcrumb';
+
 export { useButtonGroup } from './useButtonGroup';
 export type {
   IUseButtonGroupPropGetters,

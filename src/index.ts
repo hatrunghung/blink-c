@@ -4,7 +4,12 @@ export { ThemeProvider } from './theme/ThemeProvider';
 export type { IThemeProviderProps } from './theme/ThemeProvider';
 
 // hooks
-export { useAccordion, useButtonGroup, useSelection } from './hooks';
+export {
+  useAccordion,
+  useBreadcrumb,
+  useButtonGroup,
+  useSelection,
+} from './hooks';
 
 // components
 export {
@@ -20,6 +25,8 @@ export type {
   IAccordionHeaderProps,
   IAccordionSectionProps,
 } from './Accordion';
+
+export { Breadcrumb } from './Breadcrumb';
 
 export {
   AnchorButton,
