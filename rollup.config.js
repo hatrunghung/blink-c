@@ -30,7 +30,7 @@ export default {
       extensions,
     }),
     nodeResolve({
-      mainFields: ['module', 'main', 'jsnext', 'browser'],
+      mainFields: ['module', 'main', 'jsnext:main', 'browser'],
       extensions,
     }),
     typescript({

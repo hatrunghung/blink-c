@@ -131,6 +131,7 @@ const space = {
   lg: `${BASE * 8}px`,
   xl: `${BASE * 11}px`,
   xxl: `${BASE * 13}px`,
+  xxxl: `${BASE * 24}px`,
 };
 
 const DEFAULT_THEME: DefaultTheme = {

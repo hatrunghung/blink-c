@@ -7,7 +7,7 @@
     "lib": ["ES6", "DOM", "ES2016", "ES2017"],
     "sourceMap": true,
     "jsx": "react",
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
