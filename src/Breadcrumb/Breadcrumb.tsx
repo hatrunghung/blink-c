@@ -30,8 +30,8 @@ export const Breadcrumb: FunctionComponent<RefAttributes<any>> = forwardRef(
       return <StyledBreadcrumbItem>{child}</StyledBreadcrumbItem>;
     });
 
-    console.log('mapped', childrenMapped);
-    console.log('count', childrenCount);
+    // console.log('mapped', childrenMapped);
+    // console.log('count', childrenCount);
 
     return (
       <nav ref={ref} {...getContainerProps({ role: null, ...props } as any)}>
