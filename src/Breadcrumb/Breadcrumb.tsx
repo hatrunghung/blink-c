@@ -14,7 +14,6 @@ export const Breadcrumb: FunctionComponent<RefAttributes<any>> = forwardRef(
     const { getContainerProps, getCurrentPageProps } = useBreadcrumb();
 
     const childrenCount = Children.count(props.children);
-    const shouldCollapsed = childrenCount > 4;
 
     const childrenMapped = Children.map(props.children, (child, index) => {
       const isLastItem = index === childrenCount - 1;
@@ -35,9 +34,7 @@ export const Breadcrumb: FunctionComponent<RefAttributes<any>> = forwardRef(
 
     return (
       <nav ref={ref} {...getContainerProps({ role: null, ...props } as any)}>
-        <StyledBreadcrumb isCollapsible={shouldCollapsed}>
-          {childrenMapped}
-        </StyledBreadcrumb>
+        <StyledBreadcrumb>{childrenMapped}</StyledBreadcrumb>
       </nav>
     );
   },

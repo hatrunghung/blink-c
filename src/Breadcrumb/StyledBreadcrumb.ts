@@ -6,13 +6,9 @@ import { StyledBreadcrumbItem } from './StyledBreadcrumbItem';
 
 const COMPONENT_ID = 'Breadcrumb_breadcrumb';
 
-export interface IStyledBreadcrumbProps {
-  isCollapsible?: boolean;
-}
-
-export const StyledBreadcrumb = styled.ul.attrs<IStyledBreadcrumbProps>({
+export const StyledBreadcrumb = styled.ul.attrs({
   'component-blink-id': COMPONENT_ID,
-})<IStyledBreadcrumbProps>`
+})`
   list-style-type: none;
   margin: 0;
   padding: 1em;
