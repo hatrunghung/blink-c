@@ -1,10 +1,12 @@
-import React, { ButtonHTMLAttributes, FunctionComponent } from 'react';
+import React, { ButtonHTMLAttributes, forwardRef } from 'react';
 import { useAccordionContext } from '../contexts/useAccordionContext';
 import { useAccordionSectionContext } from '../contexts/useAccordionSectionContext';
 import { StyledButtonLabel } from './StyledButtonLabel';
 
-export const AccordionLabel: FunctionComponent &
-  ButtonHTMLAttributes<HTMLButtonElement> = props => {
+export const AccordionLabel = forwardRef<
+  HTMLButtonElement,
+  ButtonHTMLAttributes<HTMLButtonElement>
+>((props, ref) => {
   const {
     expandedSection,
     accordionType,
@@ -17,6 +19,7 @@ export const AccordionLabel: FunctionComponent &
   return (
     <StyledButtonLabel
       {...getButtonTriggerProps({
+        ref,
         index: sectionIndex,
         isExpanded,
         accordionType,
@@ -25,4 +28,6 @@ export const AccordionLabel: FunctionComponent &
       {props.children}
     </StyledButtonLabel>
   );
-};
+});
+
+AccordionLabel.displayName = 'AccordionLabel';

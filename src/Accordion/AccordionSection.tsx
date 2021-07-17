@@ -1,21 +1,9 @@
-import React, {
-  forwardRef,
-  FunctionComponent,
-  HTMLAttributes,
-  ReactNode,
-  useRef,
-} from 'react';
-import PropTypes from 'prop-types';
+import React, { forwardRef, HTMLAttributes, useRef } from 'react';
 import { useAccordionContext } from '../contexts/useAccordionContext';
 import { AccordionSectionContext } from '../contexts/useAccordionSectionContext';
 import { StyledAccordionSection } from './StyledAccordionSection';
 
-export interface IAccordionSectionProps {
-  children?: ReactNode;
-  isDisabled?: boolean;
-}
-
-export const AccordionSection: FunctionComponent = forwardRef<
+export const AccordionSection = forwardRef<
   HTMLDivElement,
   HTMLAttributes<HTMLDivElement>
 >((props, ref) => {
@@ -34,8 +22,3 @@ export const AccordionSection: FunctionComponent = forwardRef<
   );
 });
 AccordionSection.displayName = 'AccordionSection';
-
-AccordionSection.propTypes = {
-  children: PropTypes.node,
-  isDisabled: PropTypes.bool,
-};

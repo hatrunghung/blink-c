@@ -1,10 +1,11 @@
 import React, {
-  FunctionComponent,
+  forwardRef,
   HTMLAttributes,
   useEffect,
   useMemo,
   useRef,
 } from 'react';
+import PropTypes from 'prop-types';
 import { StepperContext } from '../contexts/useStepperContext';
 import { StyledStepper } from './StyledStepper';
 
@@ -17,42 +18,39 @@ export interface IStepperProps
   onChange?: (index: number) => void;
 }
 
-export const Stepper: FunctionComponent & HTMLAttributes<HTMLDivElement> = ({
-  activeStep,
-  direction,
-  size,
-  colorType,
-  onChange,
-  children,
-  ...props
-}: IStepperProps) => {
-  const currentIndexRef = useRef(0);
+export const Stepper = forwardRef<HTMLDivElement, IStepperProps>(
+  (
+    { activeStep, direction, size, colorType, onChange, children, ...props },
+    ref,
+  ) => {
+    const currentIndexRef = useRef(0);
 
-  useEffect(() => {
-    currentIndexRef.current = 0;
-  });
+    useEffect(() => {
+      currentIndexRef.current = 0;
+    });
 
-  const value = useMemo(
-    () => ({
-      direction,
-      size,
-      colorType,
-      status,
-      onChange,
-      activeStep,
-      currentIndexRef,
-    }),
-    [direction, size, colorType, onChange, activeStep, currentIndexRef],
-  );
+    const value = useMemo(
+      () => ({
+        direction,
+        size,
+        colorType,
+        status,
+        onChange,
+        activeStep,
+        currentIndexRef,
+      }),
+      [direction, size, colorType, onChange, activeStep, currentIndexRef],
+    );
 
-  return (
-    <StepperContext.Provider value={value}>
-      <StyledStepper direction={direction} size={size} {...props}>
-        {children}
-      </StyledStepper>
-    </StepperContext.Provider>
-  );
-};
+    return (
+      <StepperContext.Provider value={value}>
+        <StyledStepper ref={ref} direction={direction} size={size} {...props}>
+          {children}
+        </StyledStepper>
+      </StepperContext.Provider>
+    );
+  },
+);
 
 Stepper.displayName = 'Stepper';
 
@@ -60,4 +58,12 @@ Stepper.defaultProps = {
   direction: 'horizontal',
   size: 'default',
   colorType: 'primary',
+};
+
+Stepper.propTypes = {
+  activeStep: PropTypes.number,
+  direction: PropTypes.oneOf(['horizontal', 'vertical']),
+  size: PropTypes.oneOf(['small', 'default']),
+  colorType: PropTypes.oneOf(['primary', 'basic']),
+  onChange: PropTypes.func,
 };

@@ -4,7 +4,7 @@ import { Breadcrumb } from '../Breadcrumb';
 import { AnchorButton } from '../../Button';
 
 export default {
-  title: 'Components/Breadcrumbs',
+  title: 'Components/Breadcrumbs/Breadcrumb',
   component: Breadcrumb,
 } as Meta;
 

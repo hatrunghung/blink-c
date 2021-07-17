@@ -1,10 +1,12 @@
-import React, { HTMLAttributes, FunctionComponent } from 'react';
+import React, { HTMLAttributes, forwardRef } from 'react';
 import { useAccordionContext } from '../contexts/useAccordionContext';
 import { useAccordionSectionContext } from '../contexts/useAccordionSectionContext';
 import { StyledPanel } from './StyledPanel';
 
-export const AccordionPanel: FunctionComponent &
-  HTMLAttributes<HTMLDivElement> = props => {
+export const AccordionPanel = forwardRef<
+  HTMLDivElement,
+  HTMLAttributes<HTMLDivElement>
+>((props, ref) => {
   const {
     accordionType,
     expandedSection,
@@ -18,6 +20,7 @@ export const AccordionPanel: FunctionComponent &
   return (
     <StyledPanel
       {...getPanelProps({
+        ref,
         index: sectionIndex,
         accordionType,
         isExpanded,
@@ -27,4 +30,6 @@ export const AccordionPanel: FunctionComponent &
       {props.children}
     </StyledPanel>
   );
-};
+});
+
+AccordionPanel.displayName = 'AccordionPanel';

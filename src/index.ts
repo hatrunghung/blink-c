@@ -12,19 +12,9 @@ export {
 } from './hooks';
 
 // components
-export {
-  Accordion,
-  AccordionSection,
-  AccordionHeader,
-  AccordionLabel,
-  AccordionPanel,
-} from './Accordion';
+export { Accordion } from './Accordion';
 
-export type {
-  IAccordionProps,
-  IAccordionHeaderProps,
-  IAccordionSectionProps,
-} from './Accordion';
+export type { IAccordionProps, IAccordionHeaderProps } from './Accordion';
 
 export { Breadcrumb } from './Breadcrumb';
 

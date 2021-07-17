@@ -16,13 +16,15 @@ Blackpink and working to fit into real world project.
 ### Components
 
 - [x] Accordion
-- [ ] Banner
-- [ ] Breadcrumb
+- [ ] Banner / Flash
+- [x] Breadcrumb
 - [x] Buttons
 - [ ] Card
 - [ ] ComboBox
+- [ ] Drawer
 - [ ] Dropdown
 - [ ] Form
+- [ ] Flag / Notification
 - [x] Grid
 - [ ] Input
 - [ ] Modal

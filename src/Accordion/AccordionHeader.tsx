@@ -1,15 +1,17 @@
 import React, {
   FocusEvent,
-  FunctionComponent,
+  forwardRef,
+  HTMLAttributes,
   MouseEvent,
   ReactNode,
   useState,
 } from 'react';
+import PropTypes from 'prop-types';
 import { useAccordionContext } from '../contexts/useAccordionContext';
 import { useAccordionSectionContext } from '../contexts/useAccordionSectionContext';
 import { StyledHeader } from './StyledHeader';
 import { COMPONENT_ID as buttonBlinkId } from './StyledButtonLabel';
-import callAllFunction from '../hooks/utils/callAllFunction';
+import composeEventHandler from '../hooks/utils/composeEventHandler';
 import { StyledRotateIcon } from './StyledRotateIcon';
 import { ChevronDown } from 'blinkicon';
 
@@ -20,12 +22,10 @@ export interface IAccordionHeaderProps {
   onBlur?: (event: FocusEvent<any>) => void;
 }
 
-export const AccordionHeader: FunctionComponent = ({
-  onClick,
-  onFocus,
-  onBlur,
-  ...props
-}: IAccordionHeaderProps) => {
+export const AccordionHeader = forwardRef<
+  HTMLDivElement,
+  HTMLAttributes<HTMLDivElement>
+>(({ onClick, onFocus, onBlur, ...props }, ref) => {
   const {
     level: ariaLevel,
     accordionType,
@@ -39,6 +39,7 @@ export const AccordionHeader: FunctionComponent = ({
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const isExpanded = expandedSection.includes(sectionIndex);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { onClick: onTriggerClick, onKeyDown } = getButtonTriggerProps({
     index: sectionIndex,
     type: 'button',
@@ -57,13 +58,14 @@ export const AccordionHeader: FunctionComponent = ({
   return (
     <StyledHeader
       {...getHeaderProps({
+        ref,
         ariaLevel,
         accordionType,
         isExpanded,
         isFocused,
-        onClick: callAllFunction(onClick, onTriggerClick),
-        onFocus: callAllFunction(onFocus, onHeaderFocus),
-        onBlur: callAllFunction(onBlur, () => setIsFocused(false)),
+        onClick: composeEventHandler(onClick, onTriggerClick),
+        onFocus: composeEventHandler(onFocus, onHeaderFocus),
+        onBlur: composeEventHandler(onBlur, () => setIsFocused(false)),
       })}
     >
       <StyledRotateIcon isExpanded={isExpanded} isAnimated={isAnimated}>
@@ -72,4 +74,12 @@ export const AccordionHeader: FunctionComponent = ({
       {props.children}
     </StyledHeader>
   );
+});
+
+AccordionHeader.displayName = 'AccordionHeader';
+
+AccordionHeader.propTypes = {
+  onClick: PropTypes.func,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
 };

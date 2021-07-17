@@ -2,7 +2,7 @@ import { createContext, MutableRefObject, useContext } from 'react';
 import { IUseAccordionPropGetters } from '../hooks/useAccordion';
 
 export interface IAccordionContext extends IUseAccordionPropGetters {
-  level?: number;
+  level: number;
   accordionType?: 'basic' | 'borderless' | 'ghost';
   currentIndexRef?: MutableRefObject<number>;
   expandedSection?: number[];

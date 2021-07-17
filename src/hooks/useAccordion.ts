@@ -1,6 +1,6 @@
 import { HTMLProps, useCallback, useState } from 'react';
 import { useUIDSeed } from 'react-uid';
-import callAllFunction from './utils/callAllFunction';
+import composeEventHandler from './utils/composeEventHandler';
 import KEYS from './utils/KEYCODES';
 
 export interface IUseAccordionProps {
@@ -114,13 +114,16 @@ export function useAccordion({
       'aria-controls': `${panelId}:${index}`,
       // may change in the future
       'aria-disabled': false,
-      onClick: callAllFunction(() => toggle(index), props.onClick),
-      onKeyDown: callAllFunction(props.onKeyDown, (event: KeyboardEvent) => {
-        if (event.key === KEYS.ENTER || event.key === KEYS.SPACE) {
-          toggle(index);
-          event.preventDefault();
-        }
-      }),
+      onClick: composeEventHandler(() => toggle(index), props.onClick),
+      onKeyDown: composeEventHandler(
+        props.onKeyDown,
+        (event: KeyboardEvent) => {
+          if (event.key === KEYS.ENTER || event.key === KEYS.SPACE) {
+            toggle(index);
+            event.preventDefault();
+          }
+        },
+      ),
       ...props,
     };
   };
