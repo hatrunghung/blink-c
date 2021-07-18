@@ -7,6 +7,7 @@ import typescript from 'rollup-plugin-typescript2';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import cleanup from 'rollup-plugin-cleanup';
+import analyze from 'rollup-plugin-analyzer';
 import { terser } from 'rollup-plugin-terser';
 
 const pkg = require(path.resolve('./package.json'));
@@ -45,5 +46,6 @@ export default {
       '{{PACKAGE_VERSION}}': pkg.version,
       preventAssignment: true,
     }),
+    analyze(),
   ],
 };

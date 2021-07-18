@@ -49,3 +49,6 @@ export {
   StepDescription,
 } from './Stepper';
 export type { IStepperProps } from './Stepper';
+
+export { Tag } from './Tag';
+export type { ITagProps } from './Tag';

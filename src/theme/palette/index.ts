@@ -103,10 +103,12 @@ const PALETTE = {
     800: '#3e5e5b',
   },
   lavender: {
-    100: '#EDF2FB',
-    200: '#D7E3FC',
-    300: '#CCDBFD',
-    400: '#B6CCFE',
+    100: '#f0f5ff',
+    200: '#E0EBFF',
+    300: '#B6CCFE',
+    400: '#91A4D9',
+    500: '#6F7EB3',
+    600: '#505C8C',
   },
   azure: {
     100: '#90cffc',
