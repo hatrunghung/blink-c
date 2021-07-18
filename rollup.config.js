@@ -24,9 +24,9 @@ export default {
     commonjs(),
     peerDepsExternal(),
     babel({
-      babelHelpers: 'bundled',
+      babelHelpers: 'runtime',
       babelrc: false,
-      exclude: 'node_modules/**',
+      exclude: /node_modules/,
       ...babelOptions,
       extensions,
     }),
