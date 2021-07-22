@@ -12,6 +12,7 @@ export interface IStyledButtonProps {
   size?: 'small' | 'medium' | 'large';
   isBasic?: boolean;
   isPrimary?: boolean;
+  isWarning?: boolean;
   isDanger?: boolean;
   isLink?: boolean;
   shape?: 'normal' | 'round' | 'pill';
@@ -101,6 +102,8 @@ function getColorStyles(
     hue = 'neutral';
   } else if (props.isDanger) {
     hue = 'danger';
+  } else if (props.isWarning) {
+    hue = 'warning';
   } else {
     hue = 'primary';
   }
@@ -223,17 +226,16 @@ function getButtonGroupStyles(
   props: IStyledButtonProps & ThemeProps<DefaultTheme>,
 ) {
   const isPrimary = props.isPrimary;
+  const borderWidths = props.theme.borderWidths.sm;
   const rtl = props.theme.rtl;
   const lightBorderColor = props.theme.colors.background;
 
+  console.log(isPrimary);
+
   return css`
     position: relative;
-
-    margin-${rtl ? 'right' : 'left'}: ${math(
-    `${props.theme.borderWidths.sm} * -1`,
-  )};
-    border-top-width: ${isPrimary && 0};
-    border-bottom-width: ${isPrimary && 0};
+    border-top-width: ${isPrimary ? 0 : borderWidths};
+    border-bottom-width: ${isPrimary ? 0 : borderWidths};
     border-right-color: ${isPrimary && 0};
     border-left-color: ${isPrimary && 0};
 
@@ -250,29 +252,32 @@ function getButtonGroupStyles(
       border-left-color: ${lightBorderColor};
     }
 
-    &:first-of-type:not(:last-of-type) {
+    &:first-of-type {
       margin-${rtl ? 'right' : 'left'}: 0;
       border-top-${rtl ? 'left' : 'right'}-radius: 0;
       border-bottom-${rtl ? 'left' : 'right'}-radius: 0;
-      border-${rtl ? 'right' : 'left'}-width: ${isPrimary && 0};
+      border-right-width: ${isPrimary ? 0 : borderWidths};
+      border-left-width: ${isPrimary ? 0 : borderWidths};
     }
 
-    &:last-of-type:not(:first-of-type) {
+    &:last-of-type {
       margin-${rtl ? 'left' : 'right'}: 0;
       border-top-${rtl ? 'right' : 'left'}-radius: 0;
       border-bottom-${rtl ? 'right' : 'left'}-radius: 0;
-      border-${rtl ? 'left' : 'right'}-width: ${isPrimary && 0};
+      border-right-width: ${isPrimary ? 0 : borderWidths};
+      border-left-width: ${isPrimary ? 0 : borderWidths};
     }
 
     &:not(:first-of-type):not(:last-of-type) {
       border-radius: 0;
+      margin: 0 1px;
     }
 
-    &:first-of-type:not(:last-of-type) ${StyledIcon} {
+    &:first-of-type ${StyledIcon} {
       margin-${rtl ? 'left' : 'right'}: ${props.shape === 'pill' && '-2px'};
     }
 
-    &:last-of-type:not(:first-of-type) ${StyledIcon} {
+    &:last-of-type ${StyledIcon} {
       margin-${rtl ? 'right' : 'left'}: ${props.shape === 'pill' && '-2px'};
     }
   `;
@@ -289,7 +294,7 @@ export const StyledButton = styled.button.attrs<IStyledButtonProps>(props => ({
     box-shadow 0.25s ease-in-out, border-color 0.25s ease-in-out;
   margin: 0;
   border: ${props =>
-    props.isLink ? 'none' : `${props.theme.borders.sm} transparent`};
+    props.isLink ? 'none' : props.theme.borders.sm('transparent')};
   border-radius: ${props => getBorderRadius(props)};
   cursor: pointer;
   width: ${props => (props.isStretched ? '100%' : '')};

@@ -14,6 +14,7 @@ import { StyledIcon } from './StyledIcon';
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'small' | 'medium' | 'large';
   isPrimary?: boolean;
+  isWarning?: boolean;
   isDanger?: boolean;
   isBasic?: boolean;
   isStretched?: boolean;
@@ -62,6 +63,7 @@ Button.displayName = 'Button';
 Button.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   isPrimary: PropTypes.bool,
+  isWarning: PropTypes.bool,
   isDanger: PropTypes.bool,
   isBasic: PropTypes.bool,
   shape: PropTypes.oneOf(['normal', 'round', 'pill']),

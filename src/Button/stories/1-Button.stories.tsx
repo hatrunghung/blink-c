@@ -12,6 +12,7 @@ export default {
 export const Default: Story = ({
   buttonText,
   isPrimary,
+  isWarning,
   isDanger,
   isBasic,
   shape,
@@ -28,6 +29,7 @@ export const Default: Story = ({
       <Col textAlign="center">
         <Button
           isPrimary={isPrimary}
+          isWarning={isWarning}
           isDanger={isDanger}
           isBasic={isBasic}
           shape={shape}

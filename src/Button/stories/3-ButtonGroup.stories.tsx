@@ -52,11 +52,25 @@ export const Default: Story = ({
             >
               Button 3
             </Button>
+            <Button
+              value="button-4"
+              isPrimary={isPrimary}
+              isDanger={isDanger}
+              disabled={disabled}
+              size={size}
+              shape={shape}
+            >
+              Button 4
+            </Button>
           </ButtonGroup>
         </Col>
       </Row>
     </Grid>
   );
+};
+
+Default.args = {
+  isPrimary: true,
 };
 
 Default.argTypes = {
