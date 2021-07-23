@@ -14,6 +14,8 @@ declare module 'styled-components' {
     borderRadius: {
       sm: string;
       md: string;
+      lg: string;
+      xl: string;
     };
     borderStyles: {
       solid: string;
