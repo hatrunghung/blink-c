@@ -37,6 +37,9 @@ export type {
   IToggleIconButtonProps,
 } from './Button';
 
+export { Card, CardTitle, CardBody, CardAction } from './Card';
+export type { ICardProps } from './Card';
+
 export { Grid, Row, Col } from './Grid';
 export type { IGridProps, IRowProps, IColProps } from './Grid';
 
