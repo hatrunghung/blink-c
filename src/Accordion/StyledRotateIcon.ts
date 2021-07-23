@@ -16,7 +16,7 @@ function getColorStyles(props: ThemeProps<DefaultTheme> & any) {
 export const StyledRotateIcon = styled(({ children, isExpanded, ...props }) =>
   cloneElement(Children.only(children), { isExpanded, ...props }),
 ).attrs({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })`
   transform: ${props =>
     !props.isExpanded && `rotate(${props.theme.rtl ? '+' : '-'}90deg)`};

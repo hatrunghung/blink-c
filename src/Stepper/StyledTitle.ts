@@ -63,7 +63,7 @@ function getSizeStyles(props: IStyledTitleProps & ThemeProps<DefaultTheme>) {
 }
 
 export const StyledTitle = styled.div.attrs<IStyledTitleProps>({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })<IStyledTitleProps>`
   position: relative;
   display: inline-block;

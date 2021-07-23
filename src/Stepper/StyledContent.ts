@@ -11,7 +11,7 @@ export interface IStyledContentProps {
 }
 
 export const StyledContent = styled.div.attrs<IStyledContentProps>({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })<IStyledContentProps>`
   vertical-align: top;
   display: ${props =>

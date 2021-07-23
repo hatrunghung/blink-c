@@ -5,7 +5,7 @@ import { getComponentStyles } from '../theme/utils';
 const COMPONENT_ID = 'Tag.close';
 
 export const StyledClose = styled.div.attrs<unknown>({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
   'aria-label': 'Press delete to remove',
 })`
   display: flex;

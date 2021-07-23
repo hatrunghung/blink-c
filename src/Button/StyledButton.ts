@@ -284,7 +284,7 @@ function getButtonGroupStyles(
 }
 
 export const StyledButton = styled.button.attrs<IStyledButtonProps>(props => ({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
   type: props.type || 'button',
 }))<IStyledButtonProps>`
   display: ${props => (props.isLink ? 'inline' : 'inline-flex')};

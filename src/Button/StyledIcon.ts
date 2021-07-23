@@ -30,7 +30,7 @@ function getSizeStyles(props: IStyledIconProps & ThemeProps<DefaultTheme>) {
 export const StyledIcon = styled(({ children, ...props }) =>
   React.cloneElement(React.Children.only(children), props),
 ).attrs({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })<IStyledIconProps>`
   transform: ${props =>
     props.isRotated ? `rotate(${props.theme.rtl ? '-' : '+'}180deg)` : 'none'};

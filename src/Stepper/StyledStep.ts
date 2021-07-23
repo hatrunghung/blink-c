@@ -14,7 +14,7 @@ export interface IStyledStepProps {
 }
 
 export const StyledStep = styled.div.attrs<IStyledStepProps>({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })<IStyledStepProps>`
   position: relative;
   vertical-align: top;

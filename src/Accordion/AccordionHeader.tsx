@@ -49,7 +49,7 @@ export const AccordionHeader = forwardRef<
     event.persist();
 
     setTimeout(() => {
-      if (event.target.getAttribute('component-blink-id') === buttonBlinkId) {
+      if (event.target.getAttribute('data-blink-id') === buttonBlinkId) {
         setIsFocused(true);
       }
     }, 0);

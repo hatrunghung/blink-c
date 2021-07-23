@@ -27,7 +27,7 @@ function getLineHeightStyles(
 }
 
 export const StyledStepper = styled.div.attrs<IStyledStepperProps>({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })<IStyledStepperProps>`
   display: flex;
   flex-direction: ${props =>

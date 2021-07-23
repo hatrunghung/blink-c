@@ -7,7 +7,7 @@ import { StyledBreadcrumbItem } from './StyledBreadcrumbItem';
 const COMPONENT_ID = 'Breadcrumb_breadcrumb';
 
 export const StyledBreadcrumb = styled.ul.attrs({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })`
   list-style-type: none;
   margin: 0;

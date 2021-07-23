@@ -29,7 +29,7 @@ function getBorderBottomStyles(
 
 export const StyledAccordionSection = styled.div.attrs<IStyledAccordionSection>(
   {
-    'component-blink-id': COMPONENT_ID,
+    'data-blink-id': COMPONENT_ID,
   },
 )<IStyledAccordionSection>`
   ${props => getBorderBottomStyles(props)};

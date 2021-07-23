@@ -103,14 +103,14 @@ function getColorStyles(props: IStyledIcon & ThemeProps<DefaultTheme>) {
   }
 
   return css`
-    border: ${props => `${props.theme.borders.sm} ${borderColorValue}`};
+    border: ${props => props.theme.borders.sm(borderColorValue)};
     background-color: ${backgroundColorValue};
     color: ${colorValue};
   `;
 }
 
 export const StyledIcon = styled.div.attrs<IStyledIcon>({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })<IStyledIcon>`
   display: ${props =>
     props.direction === DIRECTION.HORIZONTAL && 'inline-block'};

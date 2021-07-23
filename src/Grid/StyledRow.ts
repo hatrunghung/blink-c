@@ -118,7 +118,7 @@ function getResponsiveStyles(
 }
 
 export const StyledRow = styled.div.attrs<IStyledRowProps>({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })<IStyledRowProps>`
   display: flex;
   box-sizing: border-box;

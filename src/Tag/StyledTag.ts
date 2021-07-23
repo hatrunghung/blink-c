@@ -41,7 +41,7 @@ function getColorStyles(props: IStyledTagProps & ThemeProps<DefaultTheme>) {
 }
 
 export const StyledTag = styled.div.attrs<IStyledTagProps>({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })<IStyledTagProps>`
   display: inline-flex;
   justify-content: center;

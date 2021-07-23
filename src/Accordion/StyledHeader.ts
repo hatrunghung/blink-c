@@ -63,7 +63,7 @@ function getColorStyles(props: IStyledHeaderProps & ThemeProps<DefaultTheme>) {
 }
 
 export const StyledHeader = styled.div.attrs<IStyledHeaderProps>({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })<IStyledHeaderProps>`
   display: flex;
   align-items: center;

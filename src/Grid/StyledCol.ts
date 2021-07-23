@@ -156,7 +156,7 @@ function getResponsiveStyles(
 }
 
 export const StyledCol = styled.div.attrs<IStyledColProps>({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })<IStyledColProps>`
   box-sizing: border-box;
 

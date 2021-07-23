@@ -38,7 +38,7 @@ function getSizeStyles(props: IStyledGridProps) {
 }
 
 export const StyledGrid = styled.div.attrs<IStyledGridProps>({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })<IStyledGridProps>`
   direction: ${props => (props.theme.rtl ? 'rtl' : 'ltr')};
   margin-right: auto;

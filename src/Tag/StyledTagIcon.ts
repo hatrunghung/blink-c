@@ -8,7 +8,7 @@ const COMPONENT_ID = 'Tag.tag_icon';
 export const StyledTagIcon = styled(({ children, ...props }) =>
   React.cloneElement(Children.only(children), props),
 ).attrs({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })`
   flex-shrink: 0;
 

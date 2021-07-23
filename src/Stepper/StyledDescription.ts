@@ -31,7 +31,7 @@ function getPaddingStyles(
 }
 
 export const StyledDescription = styled.div.attrs<IStyledDescriptionProps>({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })<IStyledDescriptionProps>`
   font-size: ${props => props.theme.fontSizes.xxs};
   max-width: ${props => props.direction === DIRECTION.HORIZONTAL && '140px'};

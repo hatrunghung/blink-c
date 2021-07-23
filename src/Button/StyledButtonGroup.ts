@@ -5,7 +5,7 @@ import { getComponentStyles } from '../theme/utils';
 const COMPONENT_ID = 'Button.buttonGroup';
 
 export const StyledButtonGroup = styled.div.attrs({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })`
   display: 'inline-flex';
   position: relative;

@@ -36,7 +36,7 @@ function getAlignmentStyles(
 }
 
 export const StyledTail = styled.div.attrs<IStyledTailProps>({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })<IStyledTailProps>`
   display: ${props =>
     props.direction === DIRECTION.VERTICAL ? 'block' : 'none'};

@@ -6,7 +6,7 @@ import DEFAULT_THEME from '../theme';
 const COMPONENT_ID = 'Button.external_icon';
 
 export const StyledExternalIcon = styled(External).attrs({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })`
   transform: ${props => props.theme.rtl && 'scaleX(-1)'};
   margin-bottom: -0.085em;

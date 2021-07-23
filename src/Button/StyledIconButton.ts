@@ -64,7 +64,7 @@ function getIconStyles(props: IStyledButtonProps & ThemeProps<DefaultTheme>) {
 }
 
 export const StyledIconButton = styled(StyledButton).attrs({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })`
   ${props => getIconButtonStyles(props)};
 

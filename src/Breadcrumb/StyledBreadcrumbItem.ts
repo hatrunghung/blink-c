@@ -5,7 +5,7 @@ import { getColors, getComponentStyles } from '../theme/utils';
 const COMPONENT_ID = 'Breadcrumb.breadcrumb_item';
 
 export const StyledBreadcrumbItem = styled.li.attrs({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })`
   display: inline-block;
   position: relative;

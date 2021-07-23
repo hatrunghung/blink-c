@@ -11,7 +11,7 @@ export interface IStyledButtonLabelProps {
 }
 
 export const StyledButtonLabel = styled.button.attrs<IStyledButtonLabelProps>({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })<IStyledButtonLabelProps>`
   background: transparent;
   font-family: inherit;

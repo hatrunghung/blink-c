@@ -67,7 +67,7 @@ function getColorStyles(props: IStyledPanelProps & ThemeProps<DefaultTheme>) {
 }
 
 export const StyledPanel = styled.div.attrs<IStyledPanelProps>({
-  'component-blink-id': COMPONENT_ID,
+  'data-blink-id': COMPONENT_ID,
 })<IStyledPanelProps>`
   display: ${props => !props.isExpanded && 'none'};
   overflow: hidden;
