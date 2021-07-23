@@ -21,11 +21,15 @@ const borderStyles = {
 const borderRadius = {
   sm: `${BASE / 2}px`,
   md: `${BASE}px`,
+  lg: `${BASE * 2}px`,
+  xl: `${BASE * 3}px`,
 };
 
 const borders = {
-  sm: `${borderRadius.sm} ${borderStyles.solid}`,
-  md: `${borderRadius.md} ${borderStyles.solid}`,
+  sm: (borderColor): string =>
+    `${borderWidths.sm} ${borderStyles.solid} ${borderColor}`,
+  md: (borderColor): string =>
+    `${borderWidths.md} ${borderStyles.solid} ${borderColor}`,
 };
 
 const breakpoints = {

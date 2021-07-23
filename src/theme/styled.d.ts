@@ -8,8 +8,8 @@ declare module 'styled-components' {
     rtl: boolean;
     document?: any;
     borders: {
-      sm: string;
-      md: string;
+      sm: (borderColor) => string;
+      md: (borderColor) => string;
     };
     borderRadius: {
       sm: string;

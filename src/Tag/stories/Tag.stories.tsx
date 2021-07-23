@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react';
 import Tag from '../Tag';
 import { Grid, Row, Col } from '../../Grid';
-import { CheckCircle, ExclamationMarkCircle, CloseCircle } from 'blinkicon';
+import { Button } from '../../Button';
+import { CheckCircle, Stop, CloseCircle } from 'blinkicon';
 
 export default {
   title: 'Components/Tag/Tag',
@@ -10,15 +11,25 @@ export default {
 } as Meta;
 
 export const Default: Story = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(true);
+
+  const toggleOpen = () => setIsOpen(!isOpen);
+
   return (
     <Grid>
       <Row>
         <Col textAlign="center">
           <Tag>Basic</Tag>
-          <Tag>
-            <span>Basic</span>
-            <Tag.Close onClick={() => alert('this will be deleted')} />
-          </Tag>
+          {isOpen ? (
+            <Tag>
+              <span>Basic</span>
+              <Tag.Close onClick={toggleOpen} />
+            </Tag>
+          ) : (
+            <Button size="small" onClick={toggleOpen}>
+              Open Tag again
+            </Button>
+          )}
         </Col>
       </Row>
       <Row>
@@ -33,7 +44,7 @@ export const Default: Story = () => {
         <Col textAlign="center">
           <Tag color="warning">
             <Tag.Icon>
-              <ExclamationMarkCircle />
+              <Stop />
             </Tag.Icon>
             <span>Warning</span>
           </Tag>
