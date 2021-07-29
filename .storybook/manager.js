@@ -5,6 +5,7 @@ import DEFAULT_THEME from '../src/theme';
 addons.setConfig({
   showPanel: true,
   theme: create({
+    base: DEFAULT_THEME.colors.base,
     brandTitle: 'Blink React Components',
     brandImage: null,
     colorSecondary: DEFAULT_THEME.palette.blue[600],
