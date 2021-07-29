@@ -8,18 +8,38 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import cleanup from 'rollup-plugin-cleanup';
 import analyze from 'rollup-plugin-analyzer';
-import { terser } from 'rollup-plugin-terser';
+import filesize from 'rollup-plugin-filesize';
 
 const pkg = require(path.resolve('./package.json'));
 const babelOptions = require(path.resolve('./babel.config.js'));
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
+const externalList = [
+  'react',
+  'react-dom',
+  'prop-types',
+  'styled-components',
+  /@babel\/runtime/,
+];
+const outputData = [
+  { file: pkg.main, format: 'cjs' },
+  { file: pkg.module, format: 'esm' },
+];
+const outputName = 'blink';
 
 export default {
   input: 'src/index.ts',
-  output: [
-    { file: pkg.main, format: 'cjs', plugins: [terser()] },
-    { file: pkg.module, format: 'esm' },
-  ],
+  output: outputData.map(({ file, format }) => ({
+    file,
+    format,
+    name: outputName,
+    globals: {
+      react: 'React',
+      'react-dom': 'ReactDOM',
+      'prop-types': 'PropTypes',
+      'styled-components': 'styled',
+    },
+  })),
+  external: externalList,
   plugins: [
     commonjs(),
     peerDepsExternal(),
@@ -31,7 +51,7 @@ export default {
       extensions,
     }),
     nodeResolve({
-      mainFields: ['module', 'main', 'jsnext:main', 'browser'],
+      browser: true,
       extensions,
     }),
     typescript({
@@ -47,5 +67,6 @@ export default {
       preventAssignment: true,
     }),
     analyze(),
+    filesize(),
   ],
 };
