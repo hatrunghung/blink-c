@@ -7,6 +7,7 @@ export type { IThemeProviderProps } from './theme/ThemeProvider';
 export {
   useAccordion,
   useBreadcrumb,
+  useCheckbox,
   useButtonGroup,
   useSelection,
 } from './hooks';
@@ -39,6 +40,9 @@ export type {
 
 export { Card, CardTitle, CardBody, CardAction } from './Card';
 export type { ICardProps } from './Card';
+
+export { Checkbox } from './Checkbox';
+export type { ICheckboxProps } from './Checkbox';
 
 export { Grid, Row, Col } from './Grid';
 export type { IGridProps, IRowProps, IColProps } from './Grid';

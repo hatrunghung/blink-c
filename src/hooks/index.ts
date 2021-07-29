@@ -15,6 +15,14 @@ export type {
   UseButtonGroupReturnValue,
 } from './useButtonGroup';
 
+export { useCheckbox } from './useCheckbox';
+export type {
+  ICheckboxProps,
+  ICheckboxGroupProps,
+  IUseCheckboxProps,
+  IUseCheckboxReturnValue,
+} from './useCheckbox';
+
 export { useSelection } from './useSelection';
 export type {
   IUseSelectionPropGetters,
