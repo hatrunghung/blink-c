@@ -10,4 +10,12 @@ export interface IGridContext {
 export const GridContext = createContext<IGridContext>({});
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export const useGridContext = () => useContext(GridContext);
+export const useGridContext = () => {
+  const context = useContext(GridContext);
+
+  if (!context) {
+    throw new Error('You must use the component within <Grid /> component');
+  }
+
+  return context;
+};
