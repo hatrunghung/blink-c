@@ -6,6 +6,7 @@ const COMPONENT_ID = 'Checkbox.visible_checkbox';
 
 export interface IStyledVisibleCheckboxProps {
   indeterminate?: boolean;
+  disabled?: boolean;
   checked?: boolean;
 }
 
@@ -17,17 +18,43 @@ function getColorStyles(
 
   const shade = 600;
   const primaryColor = getColors('primary', shade, props.theme);
+  const disabledBackgroundColor = getColors(
+    'neutral',
+    shade - 400,
+    props.theme,
+  );
+  const disabledInnerColor = getColors('neutral', shade - 200, props.theme);
+  const disabledBackgroundIndeterminateColor = getColors(
+    'neutral',
+    shade - 200,
+    props.theme,
+  );
+  const disabledInnerIndeterminateColor = getColors(
+    'neutral',
+    shade,
+    props.theme,
+  );
 
-  if (props.indeterminate) {
-    backgroundColorValue = 'transparent';
-    innerTextColorValue = primaryColor;
-  } else {
-    if (props.checked) {
-      backgroundColorValue = primaryColor;
-      innerTextColorValue = 'white';
+  if (props.disabled) {
+    if (props.indeterminate) {
+      backgroundColorValue = disabledBackgroundIndeterminateColor;
+      innerTextColorValue = disabledInnerIndeterminateColor;
     } else {
+      backgroundColorValue = disabledBackgroundColor;
+      innerTextColorValue = disabledInnerColor;
+    }
+  } else {
+    if (props.indeterminate) {
       backgroundColorValue = 'transparent';
-      innerTextColorValue = '';
+      innerTextColorValue = primaryColor;
+    } else {
+      if (props.checked) {
+        backgroundColorValue = primaryColor;
+        innerTextColorValue = 'white';
+      } else {
+        backgroundColorValue = 'transparent';
+        innerTextColorValue = '';
+      }
     }
   }
 
@@ -42,7 +69,7 @@ export const StyledVisibleCheckbox = styled.span.attrs<IStyledVisibleCheckboxPro
     'data-blink-id': COMPONENT_ID,
   },
 )<IStyledVisibleCheckboxProps>`
-  cursor: pointer;
+  cursor: ${props => (props.disabled ? 'default' : 'pointer')};
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
@@ -63,7 +90,9 @@ export const StyledVisibleCheckbox = styled.span.attrs<IStyledVisibleCheckboxPro
 
   &:hover {
     border-color: ${props =>
-      !props.checked && getColors('primary', 600, props.theme)};
+      !props.checked &&
+      !props.disabled &&
+      getColors('primary', 600, props.theme)};
   }
 
   ${props => getComponentStyles(COMPONENT_ID, props)};

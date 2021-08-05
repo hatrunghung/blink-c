@@ -72,7 +72,7 @@ export const Default: Story = () => {
   return (
     <Grid>
       <Row>
-        <Col>
+        <Col size={16}>
           <Checkbox
             indeterminate={
               !jisoo && !jennie && !rose && !lisa
@@ -111,6 +111,14 @@ export const Default: Story = () => {
               Lisa
             </Checkbox>
           </StyledCheckboxGroup>
+        </Col>
+        <Col>
+          <Checkbox disabled checked={false}>
+            Disabled (unchecked) Checkbox
+          </Checkbox>
+          <Checkbox disabled checked={true}>
+            Disabled Checkbox
+          </Checkbox>
         </Col>
       </Row>
     </Grid>

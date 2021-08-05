@@ -16,6 +16,7 @@ declare module 'styled-components' {
       md: string;
       lg: string;
       xl: string;
+      max: string;
     };
     borderStyles: {
       solid: string;

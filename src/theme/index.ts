@@ -23,6 +23,7 @@ const borderRadius = {
   md: `${BASE}px`,
   lg: `${BASE * 2}px`,
   xl: `${BASE * 3}px`,
+  max: `100%`,
 };
 
 const borders = {
