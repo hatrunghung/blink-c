@@ -101,9 +101,9 @@ const fontWeights = {
 };
 
 const iconSizes = {
-  sm: `14px`,
-  md: `16px`,
-  lg: `18px`,
+  sm: `${BASE * 3}px`,
+  md: `${BASE * 4}px`,
+  lg: `${BASE * 6}px`,
 };
 
 const lineHeights = {

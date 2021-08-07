@@ -47,6 +47,9 @@ export type { ICheckboxProps } from './Checkbox';
 export { Grid, Row, Col } from './Grid';
 export type { IGridProps, IRowProps, IColProps } from './Grid';
 
+export { Notification } from './Notification';
+export type { INotificationProps } from './Notification';
+
 export {
   Stepper,
   Step,
