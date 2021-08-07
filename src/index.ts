@@ -38,7 +38,7 @@ export type {
   IToggleIconButtonProps,
 } from './Button';
 
-export { Card, CardTitle, CardBody, CardAction } from './Card';
+export { Card } from './Card';
 export type { ICardProps } from './Card';
 
 export { Checkbox } from './Checkbox';
