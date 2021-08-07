@@ -1,9 +1,18 @@
-import React, { forwardRef, HTMLAttributes, useMemo } from 'react';
+import React, {
+  forwardRef,
+  ForwardRefExoticComponent,
+  HTMLAttributes,
+  RefAttributes,
+  useMemo,
+} from 'react';
 import PropTypes from 'prop-types';
 import { CardContext } from '../contexts/useCardContext';
 import { StyledCard } from './StyledCard';
 import { StyledCardWrapper } from './StyledCardWrapper';
 import { StyledImageHeader } from './StyledImageHeader';
+import CardTitle from './CardTitle';
+import CardBody from './CardBody';
+import CardAction from './CardAction';
 
 export interface ICardProps extends HTMLAttributes<HTMLDivElement> {
   headerSrc?: string;
@@ -36,4 +45,14 @@ Card.propTypes = {
   thumbnailSrc: PropTypes.string,
 };
 
-export default Card;
+(Card as any).Title = CardTitle;
+(Card as any).Body = CardBody;
+(Card as any).Action = CardAction;
+
+export default Card as ForwardRefExoticComponent<
+  ICardProps & RefAttributes<HTMLDivElement>
+> & {
+  Title: typeof CardTitle;
+  Body: typeof CardBody;
+  Action: typeof CardAction;
+};

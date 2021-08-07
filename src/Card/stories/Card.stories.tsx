@@ -1,6 +1,9 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { Card, CardTitle, CardBody, CardAction } from '../';
+import { Card } from '../';
+import CardTitle from '../CardTitle';
+import CardBody from '../CardBody';
+import CardAction from '../CardAction';
 import { Col, Grid, Row } from '../../Grid';
 import { Button } from '../../Button';
 
@@ -8,9 +11,9 @@ export default {
   title: 'Components/Card/Card',
   subcomponent: {
     Card,
-    CardTitle,
-    CardBody,
-    CardAction,
+    'Card.Title': CardTitle,
+    'Card.Body': CardBody,
+    'Card.Action': CardAction,
   },
 } as Meta;
 
@@ -29,13 +32,13 @@ export const Default: Story = ({
             headerSrc={headerSrc}
             thumbnailSrc={thumbnailSrc}
           >
-            <CardTitle>{titleText}</CardTitle>
-            <CardBody>{contentText}</CardBody>
-            <CardAction>
+            <Card.Title>{titleText}</Card.Title>
+            <Card.Body>{contentText}</Card.Body>
+            <Card.Action>
               <Button isStretched onClick={() => alert('clicked')}>
                 Button Label
               </Button>
-            </CardAction>
+            </Card.Action>
           </Card>
         </Col>
       </Row>
