@@ -6,7 +6,7 @@ import { Grid, Row, Col } from '../../Grid';
 import { useCheckbox } from '../../hooks/useCheckbox';
 
 export default {
-  title: 'Components/Checkbox/Checkbox',
+  title: 'Forms/Checkbox/Checkbox',
   component: Checkbox,
 } as Meta;
 

@@ -35,4 +35,8 @@ Grid.propTypes = {
   gutters: PropTypes.oneOf(ArraySpace),
 };
 
+Grid.defaultProps = {
+  columns: 24,
+};
+
 export default Grid;
