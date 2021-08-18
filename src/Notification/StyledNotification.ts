@@ -9,6 +9,24 @@ export interface IStyledNotificationProps {
   isAlert?: boolean;
 }
 
+function boxShadowStyles(
+  props: IStyledNotificationProps & ThemeProps<DefaultTheme>,
+) {
+  const verticalOffset = props.theme.space.md;
+  const blurRadius = `${props.theme.space.base * 7}px`;
+  const boxShadowColor = getColors('pink', 800, props.theme, 0.2);
+
+  const boxShadowValue = props.theme.shadows.lg(
+    verticalOffset,
+    blurRadius,
+    boxShadowColor,
+  );
+
+  return css`
+    box-shadow: ${boxShadowValue};
+  `;
+}
+
 function getColorStyles(
   props: IStyledNotificationProps & ThemeProps<DefaultTheme>,
 ) {
@@ -62,6 +80,8 @@ export const StyledNotification = styled.div.attrs<IStyledNotificationProps>({
   position: relative;
   padding: ${props => `${props.theme.space.sm} ${props.theme.space.xl}`};
   border-radius: ${props => props.theme.borderRadius.md};
+
+  ${props => !props.isAlert && boxShadowStyles(props)};
 
   ${props => getColorStyles(props)};
 
