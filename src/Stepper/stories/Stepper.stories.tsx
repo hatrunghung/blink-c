@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Story, Meta } from '@storybook/react';
-import { Stepper } from '../Stepper';
-import { Step } from '../Step';
-import { StepLabel } from '../StepLabel';
-import { StepContent } from '../StepContent';
-import { StepTitle } from '../StepTitle';
-import { StepDescription } from '../StepDescription';
+import Stepper from '../Stepper';
+import Step from '../Step';
+import StepLabel from '../StepLabel';
+import StepContent from '../StepContent';
+import StepTitle from '../StepTitle';
+import StepDescription from '../StepDescription';
 import { Button } from '../../Button';
 
 export default {
   title: 'Components/Stepper/Stepper',
   subcomponent: {
     Stepper,
-    Step,
-    StepLabel,
-    StepContent,
-    StepTitle,
-    StepDescription,
+    'Stepper.Step': Step,
+    'Stepper.Label': StepLabel,
+    'Stepper.Content': StepContent,
+    'Stepper.Title': StepTitle,
+    'Stepper.Description': StepDescription,
   },
 } as Meta;
 
@@ -47,34 +47,34 @@ export const Default: Story = ({ direction, size, colorType }) => {
         size={size}
         colorType={colorType}
       >
-        <Step>
-          <StepLabel></StepLabel>
-          <StepContent>
-            <StepTitle>First Step</StepTitle>
-            <StepDescription>This is a description</StepDescription>
-          </StepContent>
-        </Step>
-        <Step>
-          <StepLabel></StepLabel>
-          <StepContent>
-            <StepTitle>Second Step</StepTitle>
-            <StepDescription>This is a description</StepDescription>
-          </StepContent>
-        </Step>
-        <Step>
-          <StepLabel></StepLabel>
-          <StepContent>
-            <StepTitle>Third Step</StepTitle>
-            <StepDescription>This is a description</StepDescription>
-          </StepContent>
-        </Step>
-        <Step>
-          <StepLabel></StepLabel>
-          <StepContent>
-            <StepTitle>Final Step</StepTitle>
-            <StepDescription>This is a description</StepDescription>
-          </StepContent>
-        </Step>
+        <Stepper.Step>
+          <Stepper.Label></Stepper.Label>
+          <Stepper.Content>
+            <Stepper.Title>First Step</Stepper.Title>
+            <Stepper.Description>This is a description</Stepper.Description>
+          </Stepper.Content>
+        </Stepper.Step>
+        <Stepper.Step>
+          <Stepper.Label></Stepper.Label>
+          <Stepper.Content>
+            <Stepper.Title>Second Step</Stepper.Title>
+            <Stepper.Description>This is a description</Stepper.Description>
+          </Stepper.Content>
+        </Stepper.Step>
+        <Stepper.Step>
+          <Stepper.Label></Stepper.Label>
+          <Stepper.Content>
+            <Stepper.Title>Third Step</Stepper.Title>
+            <Stepper.Description>This is a description</Stepper.Description>
+          </Stepper.Content>
+        </Stepper.Step>
+        <Stepper.Step>
+          <Stepper.Label></Stepper.Label>
+          <Stepper.Content>
+            <Stepper.Title>Final Step</Stepper.Title>
+            <Stepper.Description>This is a description</Stepper.Description>
+          </Stepper.Content>
+        </Stepper.Step>
       </Stepper>
       <StyledDivContainer>
         {currentStep > 0 ? (

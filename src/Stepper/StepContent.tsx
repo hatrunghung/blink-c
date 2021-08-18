@@ -2,7 +2,7 @@ import React, { FunctionComponent, HTMLAttributes } from 'react';
 import { useStepperContext } from '../contexts/useStepperContext';
 import { StyledContent } from './StyledContent';
 
-export const StepContent: FunctionComponent &
+const StepContent: FunctionComponent &
   HTMLAttributes<HTMLDivElement> = props => {
   const { direction, size } = useStepperContext();
 
@@ -14,3 +14,5 @@ export const StepContent: FunctionComponent &
 };
 
 StepContent.displayName = 'StepContent';
+
+export default StepContent;

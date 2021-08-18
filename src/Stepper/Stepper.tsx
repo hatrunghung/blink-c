@@ -1,6 +1,8 @@
 import React, {
   forwardRef,
+  ForwardRefExoticComponent,
   HTMLAttributes,
+  RefAttributes,
   useEffect,
   useMemo,
   useRef,
@@ -8,6 +10,11 @@ import React, {
 import PropTypes from 'prop-types';
 import { StepperContext } from '../contexts/useStepperContext';
 import { StyledStepper } from './StyledStepper';
+import Step from './Step';
+import StepLabel from './StepLabel';
+import StepContent from './StepContent';
+import StepTitle from './StepTitle';
+import StepDescription from './StepDescription';
 
 export interface IStepperProps
   extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
@@ -18,7 +25,7 @@ export interface IStepperProps
   onChange?: (index: number) => void;
 }
 
-export const Stepper = forwardRef<HTMLDivElement, IStepperProps>(
+const Stepper = forwardRef<HTMLDivElement, IStepperProps>(
   (
     { activeStep, direction, size, colorType, onChange, children, ...props },
     ref,
@@ -54,6 +61,12 @@ export const Stepper = forwardRef<HTMLDivElement, IStepperProps>(
 
 Stepper.displayName = 'Stepper';
 
+(Stepper as any).Step = Step;
+(Stepper as any).Label = StepLabel;
+(Stepper as any).Content = StepContent;
+(Stepper as any).Title = StepTitle;
+(Stepper as any).Description = StepDescription;
+
 Stepper.defaultProps = {
   direction: 'horizontal',
   size: 'default',
@@ -66,4 +79,14 @@ Stepper.propTypes = {
   size: PropTypes.oneOf(['small', 'default']),
   colorType: PropTypes.oneOf(['primary', 'basic']),
   onChange: PropTypes.func,
+};
+
+export default Stepper as ForwardRefExoticComponent<
+  IStepperProps & RefAttributes<HTMLDivElement>
+> & {
+  Step: typeof Step;
+  Label: typeof StepLabel;
+  Content: typeof StepContent;
+  Title: typeof StepTitle;
+  Description: typeof StepDescription;
 };

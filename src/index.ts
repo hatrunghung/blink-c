@@ -56,14 +56,7 @@ export type {
   IToast,
 } from './Notification';
 
-export {
-  Stepper,
-  Step,
-  StepLabel,
-  StepContent,
-  StepTitle,
-  StepDescription,
-} from './Stepper';
+export { Stepper } from './Stepper';
 export type { IStepperProps } from './Stepper';
 
 export { Tag } from './Tag';

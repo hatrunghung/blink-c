@@ -5,8 +5,7 @@ import { useStepperContext } from '../contexts/useStepperContext';
 import { StyledTail } from './StyledTail';
 import { StyledIcon } from './StyledIcon';
 
-export const StepLabel: FunctionComponent &
-  HTMLAttributes<HTMLDivElement> = () => {
+const StepLabel: FunctionComponent & HTMLAttributes<HTMLDivElement> = () => {
   const { direction, size, colorType, activeStep } = useStepperContext();
   const { currentStepIndex } = useStepContext();
   let currentStatus;
@@ -39,3 +38,5 @@ export const StepLabel: FunctionComponent &
     </>
   );
 };
+
+export default StepLabel;

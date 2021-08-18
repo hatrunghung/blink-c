@@ -3,8 +3,7 @@ import { useStepContext } from '../contexts/useStepContext';
 import { useStepperContext } from '../contexts/useStepperContext';
 import { StyledTitle } from './StyledTitle';
 
-export const StepTitle: FunctionComponent &
-  HTMLAttributes<HTMLDivElement> = props => {
+const StepTitle: FunctionComponent & HTMLAttributes<HTMLDivElement> = props => {
   const { direction, size, colorType, activeStep } = useStepperContext();
   const { currentStepIndex } = useStepContext();
 
@@ -29,3 +28,5 @@ export const StepTitle: FunctionComponent &
     </StyledTitle>
   );
 };
+
+export default StepTitle;

@@ -9,8 +9,7 @@ import { useStepperContext } from '../contexts/useStepperContext';
 import { StepContext } from '../contexts/useStepContext';
 import { StyledStep } from './StyledStep';
 
-export const Step: FunctionComponent &
-  HTMLAttributes<HTMLDivElement> = props => {
+const Step: FunctionComponent & HTMLAttributes<HTMLDivElement> = props => {
   const { direction, currentIndexRef } = useStepperContext();
   const [currentStepIndex, setCurrentStepIndex] = useState(
     currentIndexRef.current,
@@ -38,3 +37,5 @@ export const Step: FunctionComponent &
 };
 
 Step.displayName = 'Step';
+
+export default Step;
