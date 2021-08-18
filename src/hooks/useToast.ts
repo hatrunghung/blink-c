@@ -1,14 +1,12 @@
 import { useContext, useCallback } from 'react';
 import { uid } from 'react-uid';
-import { ToastContext } from './ToastProvider';
-import { IToast, IToastOptions, ToastContent } from './toastReducer';
-
-export interface IUseToastReturnValue {
-  add: (content: ToastContent, options: IToastOptions) => void;
-  remove: (removeId) => void;
-  removeAll: () => void;
-  toasts: IToast[];
-}
+import { ToastContext } from '../contexts/ToastContext';
+import {
+  IToast,
+  IToastOptions,
+  ToastContent,
+  IUseToastReturnValue,
+} from '../Notification/Toast/types';
 
 const DEFAULT_TOAST_OPTIONS = {
   placement: 'top-end',
@@ -43,7 +41,7 @@ export const useToast = (): IUseToastReturnValue => {
   );
 
   const removeToast = useCallback(
-    removeId => {
+    (removeId: string) => {
       dispatch({ type: 'REMOVE', payload: { id: removeId } });
     },
     [dispatch],

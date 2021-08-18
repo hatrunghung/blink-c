@@ -1,6 +1,6 @@
 import { FC, useCallback } from 'react';
-import { IToast } from './toastReducer';
-import { useToast } from './useToast';
+import { IToast } from './types';
+import { useToast } from '../../hooks';
 
 interface IToastProps {
   toast: IToast;

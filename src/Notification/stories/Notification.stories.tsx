@@ -9,7 +9,7 @@ import NotificationTitle from '../NotificationTitle';
 import NotificationDescription from '../NotificationDescription';
 
 export default {
-  title: 'Components/Notification/Alert',
+  title: 'Components/Notification/Notification',
   subcomponents: {
     Notification,
     'Notification.Icon': NotificationIcon,
@@ -28,7 +28,7 @@ export const Default: Story = ({ type }) => {
     <Grid>
       <Row>
         <Col>
-          <Notification isAlert={true} type={type}>
+          <Notification isAlert={false} type={type}>
             <Notification.Title>
               {type.charAt(0).toUpperCase() + type.slice(1)} Notes
             </Notification.Title>
@@ -36,7 +36,7 @@ export const Default: Story = ({ type }) => {
 
           <StyledDivider />
 
-          <Notification isAlert={true} type={type}>
+          <Notification isAlert={false} type={type}>
             <Notification.Icon />
             <Notification.Title>
               {type.charAt(0).toUpperCase() + type.slice(1)} Notes
@@ -45,7 +45,7 @@ export const Default: Story = ({ type }) => {
 
           <StyledDivider />
 
-          <Notification isAlert={true} type={type}>
+          <Notification isAlert={false} type={type}>
             <Notification.Title>
               {type.charAt(0).toUpperCase() + type.slice(1)} Notes
             </Notification.Title>
@@ -57,7 +57,7 @@ export const Default: Story = ({ type }) => {
 
           <StyledDivider />
 
-          <Notification isAlert={true} type={type}>
+          <Notification isAlert={false} type={type}>
             <Notification.Icon />
             <Notification.Title>
               {type.charAt(0).toUpperCase() + type.slice(1)} Notes
@@ -70,7 +70,7 @@ export const Default: Story = ({ type }) => {
 
           <StyledDivider />
 
-          <Notification isAlert={true} type={type}>
+          <Notification isAlert={false} type={type}>
             <Notification.Icon />
             <Notification.Title>
               {type.charAt(0).toUpperCase() + type.slice(1)} Notes

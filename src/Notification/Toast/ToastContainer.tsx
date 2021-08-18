@@ -2,7 +2,7 @@ import React, { FC, HTMLAttributes } from 'react';
 import PropTypes from 'prop-types';
 import { StyledToastAnimationWrapper, StyledToastContainer } from './styled';
 import { Toast } from './Toast';
-import { IToast, ToastPlacement } from './toastReducer';
+import { IToast, ToastPlacement } from './types';
 
 interface IToastContainerProps extends HTMLAttributes<HTMLDivElement> {
   toasts: IToast[];

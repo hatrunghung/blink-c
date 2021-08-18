@@ -1,28 +1,8 @@
-import React, {
-  createContext,
-  Dispatch,
-  FC,
-  useMemo,
-  useReducer,
-  useCallback,
-} from 'react';
-import toastReducer, {
-  IToastReducerAction,
-  IToastState,
-  ToastPlacement,
-} from './toastReducer';
+import React, { FC, useMemo, useReducer, useCallback } from 'react';
+import toastReducer from './toastReducer';
+import { IToastState, ToastPlacement } from './types';
 import { ToastContainer } from './ToastContainer';
-
-export interface IToastContext {
-  state: IToastState;
-  dispatch: Dispatch<IToastReducerAction>;
-}
-
-export interface IToastProviderProps {
-  placement: ToastPlacement;
-}
-
-export const ToastContext = createContext<IToastContext | undefined>(undefined);
+import { ToastContext } from '../../contexts/ToastContext';
 
 function getInitialState(): IToastState {
   return {

@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import { Story, Meta } from '@storybook/react';
 import { Button } from '../../Button';
 import { Grid, Row, Col } from '../../Grid';
-import { useToast } from '../Toast/useToast';
-import { ToastProvider } from '../Toast/ToastProvider';
-import { ToastPlacement } from '../Toast/toastReducer';
+import { useToast } from '../../hooks';
+import { ToastProvider } from '..';
+import { ToastPlacement } from '..';
 import Notification from '../Notification';
 
 export default {

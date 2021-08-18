@@ -10,6 +10,7 @@ export {
   useCheckbox,
   useButtonGroup,
   useSelection,
+  useToast,
 } from './hooks';
 
 // components
@@ -47,8 +48,13 @@ export type { ICheckboxProps } from './Checkbox';
 export { Grid, Row, Col } from './Grid';
 export type { IGridProps, IRowProps, IColProps } from './Grid';
 
-export { Notification } from './Notification';
-export type { INotificationProps } from './Notification';
+export { Notification, ToastProvider } from './Notification';
+export type {
+  INotificationProps,
+  ToastPlacement,
+  IToastOptions,
+  IToast,
+} from './Notification';
 
 export {
   Stepper,

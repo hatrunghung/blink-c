@@ -230,8 +230,6 @@ function getButtonGroupStyles(
   const rtl = props.theme.rtl;
   const lightBorderColor = props.theme.colors.background;
 
-  console.log(isPrimary);
-
   return css`
     position: relative;
     border-top-width: ${isPrimary ? 0 : borderWidths};

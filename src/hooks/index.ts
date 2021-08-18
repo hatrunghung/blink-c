@@ -31,3 +31,5 @@ export type {
   IGetItemPropsOptions,
   UseSelectionReturnValue,
 } from './useSelection';
+
+export { useToast } from './useToast';
