@@ -2,22 +2,17 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Story, Meta } from '@storybook/react';
 import Stepper from '../Stepper';
-import Step from '../Step';
-import StepLabel from '../StepLabel';
-import StepContent from '../StepContent';
-import StepTitle from '../StepTitle';
-import StepDescription from '../StepDescription';
 import { Button } from '../../Button';
 
 export default {
   title: 'Components/Stepper/Stepper',
   subcomponent: {
     Stepper,
-    'Stepper.Step': Step,
-    'Stepper.Label': StepLabel,
-    'Stepper.Content': StepContent,
-    'Stepper.Title': StepTitle,
-    'Stepper.Description': StepDescription,
+    'Stepper.Step': Stepper.Step,
+    'Stepper.Label': Stepper.Label,
+    'Stepper.Content': Stepper.Content,
+    'Stepper.Title': Stepper.Title,
+    'Stepper.Description': Stepper.Description,
   },
 } as Meta;
 

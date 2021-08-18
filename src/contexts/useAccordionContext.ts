@@ -6,7 +6,6 @@ export interface IAccordionContext extends IUseAccordionPropGetters {
   accordionType?: 'basic' | 'borderless' | 'ghost';
   currentIndexRef?: MutableRefObject<number>;
   expandedSection?: number[];
-  isAnimated?: boolean;
 }
 
 export const AccordionContext = createContext<IAccordionContext | undefined>(

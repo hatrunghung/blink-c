@@ -3,7 +3,7 @@ import { useAccordionContext } from '../contexts/useAccordionContext';
 import { AccordionSectionContext } from '../contexts/useAccordionSectionContext';
 import { StyledAccordionSection } from './StyledAccordionSection';
 
-export const AccordionSection = forwardRef<
+const AccordionSection = forwardRef<
   HTMLDivElement,
   HTMLAttributes<HTMLDivElement>
 >((props, ref) => {
@@ -22,3 +22,5 @@ export const AccordionSection = forwardRef<
   );
 });
 AccordionSection.displayName = 'AccordionSection';
+
+export default AccordionSection;

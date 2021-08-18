@@ -22,7 +22,7 @@ export interface IAccordionHeaderProps {
   onBlur?: (event: FocusEvent<any>) => void;
 }
 
-export const AccordionHeader = forwardRef<
+const AccordionHeader = forwardRef<
   HTMLDivElement,
   HTMLAttributes<HTMLDivElement>
 >(({ onClick, onFocus, onBlur, ...props }, ref) => {
@@ -32,7 +32,6 @@ export const AccordionHeader = forwardRef<
     expandedSection,
     getHeaderProps,
     getButtonTriggerProps,
-    isAnimated,
   } = useAccordionContext();
 
   const sectionIndex = useAccordionSectionContext();
@@ -68,7 +67,7 @@ export const AccordionHeader = forwardRef<
         onBlur: composeEventHandler(onBlur, () => setIsFocused(false)),
       })}
     >
-      <StyledRotateIcon isExpanded={isExpanded} isAnimated={isAnimated}>
+      <StyledRotateIcon isExpanded={isExpanded}>
         <ChevronDown />
       </StyledRotateIcon>
       {props.children}
@@ -83,3 +82,5 @@ AccordionHeader.propTypes = {
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
 };
+
+export default AccordionHeader;

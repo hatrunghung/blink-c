@@ -6,44 +6,33 @@ import React, {
   useRef,
   RefAttributes,
   ForwardRefExoticComponent,
-  PropsWithoutRef,
 } from 'react';
 import { AccordionContext } from '../contexts/useAccordionContext';
 import { useAccordion } from '../hooks/useAccordion';
 import { StyledAccordion } from './StyledAccordion';
-import { AccordionSection } from './AccordionSection';
-import { AccordionHeader } from './AccordionHeader';
-import { AccordionLabel } from './AccordionLabel';
-import { AccordionPanel } from './AccordionPanel';
+import AccordionSection from './AccordionSection';
+import AccordionHeader from './AccordionHeader';
+import AccordionLabel from './AccordionLabel';
+import AccordionPanel from './AccordionPanel';
 
 export interface IAccordionProps
   extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
   level: number;
   accordionType?: 'basic' | 'borderless' | 'ghost';
-  isAnimated?: boolean;
   isExpandable?: boolean;
   onChange?: (index: number) => void;
 }
 
-interface IStaticAccordionExport<T, P>
-  extends ForwardRefExoticComponent<PropsWithoutRef<P> & RefAttributes<T>> {
-  Section: typeof AccordionSection;
-  Header: typeof AccordionHeader;
-  Label: typeof AccordionLabel;
-  Panel: typeof AccordionPanel;
-}
-
-export const Accordion = forwardRef<HTMLDivElement & IAccordionProps>(
+const Accordion = forwardRef<HTMLDivElement & IAccordionProps>(
   (
     {
       level,
-      accordionType,
-      isAnimated,
+      accordionType = 'basic',
+      isExpandable = true,
       onChange,
-      isExpandable,
       children,
       ...props
-    },
+    }: IAccordionProps,
     ref,
   ) => {
     const {
@@ -63,7 +52,6 @@ export const Accordion = forwardRef<HTMLDivElement & IAccordionProps>(
       () => ({
         level,
         accordionType,
-        isAnimated,
         isExpandable,
         currentIndexRef,
         getHeaderProps,
@@ -74,7 +62,6 @@ export const Accordion = forwardRef<HTMLDivElement & IAccordionProps>(
       [
         level,
         accordionType,
-        isAnimated,
         isExpandable,
         currentIndexRef,
         getHeaderProps,
@@ -92,18 +79,20 @@ export const Accordion = forwardRef<HTMLDivElement & IAccordionProps>(
       </AccordionContext.Provider>
     );
   },
-) as IStaticAccordionExport<HTMLDivElement, IAccordionProps>;
+);
 
-Accordion.Section = AccordionSection;
-Accordion.Header = AccordionHeader;
-Accordion.Label = AccordionLabel;
-Accordion.Panel = AccordionPanel;
+(Accordion as any).Section = AccordionSection;
+(Accordion as any).Header = AccordionHeader;
+(Accordion as any).Label = AccordionLabel;
+(Accordion as any).Panel = AccordionPanel;
 
 Accordion.displayName = 'Accordion';
 
-Accordion.defaultProps = {
-  isAnimated: true,
-  accordionType: 'basic',
-  isExpandable: true,
-  onChange: () => undefined,
+export default Accordion as ForwardRefExoticComponent<
+  IAccordionProps & RefAttributes<HTMLDivElement>
+> & {
+  Section: typeof AccordionSection;
+  Header: typeof AccordionHeader;
+  Label: typeof AccordionLabel;
+  Panel: typeof AccordionPanel;
 };

@@ -7,7 +7,6 @@ const COMPONENT_ID = 'Accordion.panel';
 export interface IStyledPanelProps {
   accordionType?: 'basic' | 'borderless' | 'ghost';
   isExpanded?: boolean;
-  isAnimated?: boolean;
 }
 
 function getPaddingStyles(props: IStyledPanelProps & ThemeProps<DefaultTheme>) {
@@ -26,7 +25,6 @@ function getPaddingStyles(props: IStyledPanelProps & ThemeProps<DefaultTheme>) {
   }
 
   return css`
-    transition: ${props.isAnimated && 'padding 0.25s ease-in-out'};
     padding: ${paddingVertical}px ${paddingHorizontal}px;
   `;
 }

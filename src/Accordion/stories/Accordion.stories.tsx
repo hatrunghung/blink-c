@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { Accordion } from '../Accordion';
+import Accordion from '../Accordion';
 
 export default {
   title: 'Components/Accordions/Accordion',
@@ -14,20 +14,17 @@ export default {
 } as Meta;
 
 interface IStoryProps {
-  isAnimated: boolean;
   accordionType: 'basic' | 'borderless' | 'ghost';
   isExpandable: boolean;
 }
 
 export const Default: Story<IStoryProps> = ({
-  isAnimated,
   accordionType,
   isExpandable,
 }) => {
   return (
     <Accordion
       level={3}
-      isAnimated={isAnimated}
       accordionType={accordionType}
       isExpandable={isExpandable}
     >
@@ -92,15 +89,11 @@ export const Default: Story<IStoryProps> = ({
 };
 
 Default.args = {
-  isAnimated: true,
   accordionType: 'basic',
   isExpandable: true,
 };
 
 Default.argTypes = {
-  isAnimated: {
-    control: 'boolean',
-  },
   accordionType: {
     control: { type: 'radio', options: ['basic', 'ghost', 'borderless'] },
   },

@@ -3,7 +3,7 @@ import { useAccordionContext } from '../contexts/useAccordionContext';
 import { useAccordionSectionContext } from '../contexts/useAccordionSectionContext';
 import { StyledButtonLabel } from './StyledButtonLabel';
 
-export const AccordionLabel = forwardRef<
+const AccordionLabel = forwardRef<
   HTMLButtonElement,
   ButtonHTMLAttributes<HTMLButtonElement>
 >((props, ref) => {
@@ -31,3 +31,5 @@ export const AccordionLabel = forwardRef<
 });
 
 AccordionLabel.displayName = 'AccordionLabel';
+
+export default AccordionLabel;

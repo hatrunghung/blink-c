@@ -1,9 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { Card } from '../';
-import CardTitle from '../CardTitle';
-import CardBody from '../CardBody';
-import CardAction from '../CardAction';
 import { Col, Grid, Row } from '../../Grid';
 import { Button } from '../../Button';
 
@@ -11,9 +8,9 @@ export default {
   title: 'Components/Card/Card',
   subcomponent: {
     Card,
-    'Card.Title': CardTitle,
-    'Card.Body': CardBody,
-    'Card.Action': CardAction,
+    'Card.Title': Card.Title,
+    'Card.Body': Card.Body,
+    'Card.Action': Card.Action,
   },
 } as Meta;
 
