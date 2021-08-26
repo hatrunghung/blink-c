@@ -26,13 +26,16 @@ Blackpink and working to fit into real world project.
 - [ ] Dropdown
 - [ ] Flag / Notification / Toast
 - [x] Grid
+- [ ] Heading
 - [ ] Input
 - [ ] Modal
 - [ ] Pagination
+- [ ] Paragraph
 - [ ] Radio
 - [ ] Slider
 - [x] Stepper
 - [ ] Tab
 - [x] Tag
+- [ ] Textarea
 - [ ] Toggle
 - [ ] Tooltip
