@@ -5,7 +5,7 @@ import styled, {
   ThemeProps,
 } from 'styled-components';
 import DEFAULT_THEME from '../../theme';
-import { ToastPlacement } from './toastReducer';
+import { ToastPlacement } from './types';
 
 const fadeUp = keyframes`
 	from {
