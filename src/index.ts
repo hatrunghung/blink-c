@@ -56,6 +56,8 @@ export type {
   IToast,
 } from './Notification';
 
+export { Radio } from './Radio';
+
 export { Stepper } from './Stepper';
 export type { IStepperProps } from './Stepper';
 

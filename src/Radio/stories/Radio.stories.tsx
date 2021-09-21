@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
 import styled from 'styled-components';
 import { Story, Meta } from '@storybook/react';
-import Radio from '../Radio';
+import { Radio } from '../';
 import { Grid, Row, Col } from '../../Grid';
 
 export default {
