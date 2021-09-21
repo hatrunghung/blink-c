@@ -23,7 +23,7 @@ export interface IAccordionProps
   onChange?: (index: number) => void;
 }
 
-const Accordion = forwardRef<HTMLDivElement & IAccordionProps>(
+const Accordion = forwardRef<HTMLDivElement, IAccordionProps>(
   (
     {
       level,
