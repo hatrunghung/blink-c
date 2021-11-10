@@ -8,8 +8,8 @@
     "dist"
   ],
   "scripts": {
-    "prettier:write": "prettier --write",
-    "prettier:check": "prettier --check",
+    "prettier:write": "prettier --write .",
+    "prettier:check": "prettier --check .",
     "prebuild": "rimraf dist",
     "build": "npm run prebuild && rollup -c",
     "lint": "eslint '**/*.{js, ts, tsx}'",
