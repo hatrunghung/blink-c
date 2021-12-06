@@ -10,7 +10,7 @@ export const StyledInnerRadio = styled.div.attrs({
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: ${props => props.theme.colors.background};
+  background-color: ${props => props.theme.colors.light_background};
   display: none;
 
   ${props => getComponentStyles(COMPONENT_ID, props)};

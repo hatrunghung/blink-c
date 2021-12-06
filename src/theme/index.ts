@@ -42,14 +42,15 @@ const breakpoints = {
 };
 
 const colors = {
-  background: PALETTE.white,
+  light_background: PALETTE.white,
+  dark_background: PALETTE.black,
   foreground: PALETTE.grey[700],
   primary: 'blue',
   danger: 'red',
   warning: 'yellow',
   success: 'green',
   failure: 'volcano',
-  chrome: 'kale',
+  chrome: 'pink',
   neutral: 'grey',
 };
 

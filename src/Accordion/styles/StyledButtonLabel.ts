@@ -1,13 +1,31 @@
-import styled from 'styled-components';
-import DEFAULT_THEME from '../theme';
-import { getComponentStyles, getLineHeight } from '../theme/utils';
+import styled, { css, DefaultTheme, ThemeProps } from 'styled-components';
+import DEFAULT_THEME from '../../theme';
+import { getComponentStyles, getLineHeight } from '../../theme/utils';
 
 export const COMPONENT_ID = 'Accordion.button_label';
 
 export interface IStyledButtonLabelProps {
-  accordionType?: 'basic' | 'borderless' | 'ghost';
   isDisabled?: boolean;
   isExpanded?: boolean;
+  size: 'small' | 'normal';
+}
+
+function getPaddingStyles(
+  props: IStyledButtonLabelProps & ThemeProps<DefaultTheme>,
+) {
+  const { base } = props.theme.space;
+  const horizontalPaddingValue = 0;
+  let verticalPaddingValue;
+
+  if (props.size === 'small') {
+    verticalPaddingValue = `${base * 2}px`;
+  } else {
+    verticalPaddingValue = `${base * 4}px`;
+  }
+
+  return css`
+    padding: ${horizontalPaddingValue} ${verticalPaddingValue};
+  `;
 }
 
 export const StyledButtonLabel = styled.button.attrs<IStyledButtonLabelProps>({
@@ -16,13 +34,14 @@ export const StyledButtonLabel = styled.button.attrs<IStyledButtonLabelProps>({
   background: transparent;
   font-family: inherit;
   border: none;
-  padding: ${props => `0 ${props.theme.space.base * 4}px`};
   line-height: ${props =>
     getLineHeight(props.theme.lineHeights.md, props.theme.fontSizes.xs)};
   width: 100%;
   text-align: ${props => (props.theme.rtl ? 'right' : 'left')};
   font-size: ${props => props.theme.fontSizes.xs};
   font-weight: ${props => props.theme.fontWeights.semibold};
+
+  ${props => getPaddingStyles(props)};
 
   &::-moz-focus-inner {
     border: 0;
@@ -41,5 +60,5 @@ export const StyledButtonLabel = styled.button.attrs<IStyledButtonLabelProps>({
 
 StyledButtonLabel.defaultProps = {
   theme: DEFAULT_THEME,
-  accordionType: 'basic',
+  size: 'normal',
 };

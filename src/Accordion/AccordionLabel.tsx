@@ -1,7 +1,7 @@
 import React, { ButtonHTMLAttributes, forwardRef } from 'react';
 import { useAccordionContext } from '../contexts/useAccordionContext';
 import { useAccordionSectionContext } from '../contexts/useAccordionSectionContext';
-import { StyledButtonLabel } from './StyledButtonLabel';
+import { StyledButtonLabel } from './styles/StyledButtonLabel';
 
 const AccordionLabel = forwardRef<
   HTMLButtonElement,

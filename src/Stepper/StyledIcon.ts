@@ -70,7 +70,7 @@ function getColorStyles(props: IStyledIcon & ThemeProps<DefaultTheme>) {
   const mediumGrey = getColors('neutral', shade + 200, props.theme);
   const semiboldGrey = getColors('neutral', shade + 300, props.theme);
   const boldGrey = getColors('neutral', shade + 400, props.theme);
-  const white = props.theme.colors.background;
+  const white = props.theme.colors.light_background;
 
   let borderColorValue;
   let backgroundColorValue;

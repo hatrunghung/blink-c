@@ -9,10 +9,10 @@ import React, {
 import PropTypes from 'prop-types';
 import { useAccordionContext } from '../contexts/useAccordionContext';
 import { useAccordionSectionContext } from '../contexts/useAccordionSectionContext';
-import { StyledHeader } from './StyledHeader';
-import { COMPONENT_ID as buttonBlinkId } from './StyledButtonLabel';
+import { StyledHeader } from './styles/StyledHeader';
+import { COMPONENT_ID as buttonBlinkId } from './styles/StyledButtonLabel';
+import { StyledRotateIcon } from './styles/StyledRotateIcon';
 import composeEventHandler from '../hooks/utils/composeEventHandler';
-import { StyledRotateIcon } from './StyledRotateIcon';
 import { ChevronDown } from 'blinkicon';
 
 export interface IAccordionHeaderProps {
@@ -67,7 +67,7 @@ const AccordionHeader = forwardRef<
         onBlur: composeEventHandler(onBlur, () => setIsFocused(false)),
       })}
     >
-      <StyledRotateIcon isExpanded={isExpanded}>
+      <StyledRotateIcon isRotated={isExpanded}>
         <ChevronDown />
       </StyledRotateIcon>
       {props.children}

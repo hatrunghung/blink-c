@@ -34,7 +34,8 @@ declare module 'styled-components' {
     };
     colors: {
       base: 'dark' | 'light';
-      background: string;
+      light_background: string;
+      dark_background: string;
       foreground: string;
       primary: string;
       danger: string;

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, {
   forwardRef,
   HTMLAttributes,
@@ -6,35 +7,35 @@ import React, {
   useRef,
   RefAttributes,
   ForwardRefExoticComponent,
+  PropsWithoutRef,
 } from 'react';
 import { AccordionContext } from '../contexts/useAccordionContext';
 import { useAccordion } from '../hooks/useAccordion';
-import { StyledAccordion } from './StyledAccordion';
+import { StyledAccordion } from './styles/StyledAccordion';
 import AccordionSection from './AccordionSection';
 import AccordionHeader from './AccordionHeader';
 import AccordionLabel from './AccordionLabel';
 import AccordionPanel from './AccordionPanel';
 
+interface IStaticAccordionExport<T, P>
+  extends ForwardRefExoticComponent<PropsWithoutRef<P> & RefAttributes<T>> {
+  Section: typeof AccordionSection;
+  Header: typeof AccordionHeader;
+  Label: typeof AccordionLabel;
+  Panel: typeof AccordionPanel;
+}
+
 export interface IAccordionProps
   extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
   level: number;
-  accordionType?: 'basic' | 'borderless' | 'ghost';
   isExpandable?: boolean;
+  size?: 'small' | 'normal';
+  borderless?: boolean;
   onChange?: (index: number) => void;
 }
 
-const Accordion = forwardRef<HTMLDivElement, IAccordionProps>(
-  (
-    {
-      level,
-      accordionType = 'basic',
-      isExpandable = true,
-      onChange,
-      children,
-      ...props
-    }: IAccordionProps,
-    ref,
-  ) => {
+export const Accordion = forwardRef<HTMLDivElement, IAccordionProps>(
+  ({ isExpandable, onChange, level, size, borderless, ...props }, ref) => {
     const {
       getHeaderProps,
       getButtonTriggerProps,
@@ -48,51 +49,47 @@ const Accordion = forwardRef<HTMLDivElement, IAccordionProps>(
       currentIndexRef.current = 0;
     });
 
-    const value = useMemo(
+    const contextValue = useMemo(
       () => ({
         level,
-        accordionType,
-        isExpandable,
-        currentIndexRef,
         getHeaderProps,
         getButtonTriggerProps,
         getPanelProps,
         expandedSection,
+        currentIndexRef,
+        borderless,
+        size,
       }),
       [
         level,
-        accordionType,
-        isExpandable,
-        currentIndexRef,
         getHeaderProps,
         getButtonTriggerProps,
         getPanelProps,
         expandedSection,
+        currentIndexRef,
+        borderless,
+        size,
       ],
     );
 
     return (
-      <AccordionContext.Provider value={value}>
-        <StyledAccordion ref={ref} {...props}>
-          {children}
-        </StyledAccordion>
+      <AccordionContext.Provider value={contextValue}>
+        <StyledAccordion ref={ref} {...props} />
       </AccordionContext.Provider>
     );
   },
-);
+) as IStaticAccordionExport<HTMLDivElement, IAccordionProps>;
 
-(Accordion as any).Section = AccordionSection;
-(Accordion as any).Header = AccordionHeader;
-(Accordion as any).Label = AccordionLabel;
-(Accordion as any).Panel = AccordionPanel;
+Accordion.Section = AccordionSection;
+Accordion.Header = AccordionHeader;
+Accordion.Label = AccordionLabel;
+Accordion.Panel = AccordionPanel;
 
 Accordion.displayName = 'Accordion';
 
-export default Accordion as ForwardRefExoticComponent<
-  IAccordionProps & RefAttributes<HTMLDivElement>
-> & {
-  Section: typeof AccordionSection;
-  Header: typeof AccordionHeader;
-  Label: typeof AccordionLabel;
-  Panel: typeof AccordionPanel;
+Accordion.defaultProps = {
+  borderless: false,
+  isExpandable: false,
+  size: 'normal',
+  onChange: () => undefined,
 };

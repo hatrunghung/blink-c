@@ -1,7 +1,8 @@
 import React, { HTMLAttributes, forwardRef } from 'react';
 import { useAccordionContext } from '../contexts/useAccordionContext';
 import { useAccordionSectionContext } from '../contexts/useAccordionSectionContext';
-import { StyledPanel } from './StyledPanel';
+import { StyledInnerPanel } from './styles/StyledInnerPanel';
+import { StyledPanel } from './styles/StyledPanel';
 
 const AccordionPanel = forwardRef<
   HTMLDivElement,
@@ -25,7 +26,9 @@ const AccordionPanel = forwardRef<
         isExpanded,
       })}
     >
-      {props.children}
+      <StyledInnerPanel isExpanded={isExpanded}>
+        {props.children}
+      </StyledInnerPanel>
     </StyledPanel>
   );
 });
