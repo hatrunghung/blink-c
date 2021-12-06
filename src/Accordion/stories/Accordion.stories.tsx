@@ -29,7 +29,7 @@ export const Default: Story<IStoryProps> = ({
       level={3}
       isExpandable={isExpandable}
       borderless={borderless}
-      size={size}
+      accordionSize={size}
     >
       <Accordion.Section>
         <Accordion.Header>

@@ -9,11 +9,12 @@ const AccordionPanel = forwardRef<
   HTMLAttributes<HTMLDivElement>
 >((props, ref) => {
   const {
-    accordionType,
     expandedSection,
     getPanelProps,
+    accordionSize,
+    borderless,
   } = useAccordionContext();
-  const sectionIndex = useAccordionSectionContext();
+  const { sectionIndex } = useAccordionSectionContext();
 
   const isExpanded = expandedSection.includes(sectionIndex);
 
@@ -22,11 +23,11 @@ const AccordionPanel = forwardRef<
       {...getPanelProps({
         ref,
         index: sectionIndex,
-        accordionType,
         isExpanded,
+        borderless,
       })}
     >
-      <StyledInnerPanel isExpanded={isExpanded}>
+      <StyledInnerPanel isExpanded={isExpanded} accordionSize={accordionSize}>
         {props.children}
       </StyledInnerPanel>
     </StyledPanel>

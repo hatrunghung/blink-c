@@ -9,10 +9,10 @@ const AccordionLabel = forwardRef<
 >((props, ref) => {
   const {
     expandedSection,
-    accordionType,
+    accordionSize,
     getButtonTriggerProps,
   } = useAccordionContext();
-  const sectionIndex = useAccordionSectionContext();
+  const { sectionIndex, isDisabled } = useAccordionSectionContext();
 
   const isExpanded = expandedSection.includes(sectionIndex);
 
@@ -22,7 +22,8 @@ const AccordionLabel = forwardRef<
         ref,
         index: sectionIndex,
         isExpanded,
-        accordionType,
+        isDisabled,
+        accordionSize,
       })}
     >
       {props.children}

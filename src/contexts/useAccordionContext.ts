@@ -4,7 +4,7 @@ import { IUseAccordionPropGetters } from '../hooks/useAccordion';
 export interface IAccordionContext extends IUseAccordionPropGetters {
   level: number;
   borderless?: boolean;
-  size?: 'small' | 'normal';
+  accordionSize?: 'small' | 'normal';
   currentIndexRef?: MutableRefObject<number>;
   expandedSection?: number[];
 }

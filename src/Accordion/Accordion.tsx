@@ -12,7 +12,7 @@ import React, {
 import { AccordionContext } from '../contexts/useAccordionContext';
 import { useAccordion } from '../hooks/useAccordion';
 import { StyledAccordion } from './styles/StyledAccordion';
-import AccordionSection from './AccordionSection';
+import { AccordionSection } from './AccordionSection';
 import AccordionHeader from './AccordionHeader';
 import AccordionLabel from './AccordionLabel';
 import AccordionPanel from './AccordionPanel';
@@ -29,13 +29,16 @@ export interface IAccordionProps
   extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
   level: number;
   isExpandable?: boolean;
-  size?: 'small' | 'normal';
+  accordionSize?: 'small' | 'normal';
   borderless?: boolean;
   onChange?: (index: number) => void;
 }
 
 export const Accordion = forwardRef<HTMLDivElement, IAccordionProps>(
-  ({ isExpandable, onChange, level, size, borderless, ...props }, ref) => {
+  (
+    { isExpandable, onChange, level, accordionSize, borderless, ...props },
+    ref,
+  ) => {
     const {
       getHeaderProps,
       getButtonTriggerProps,
@@ -58,7 +61,7 @@ export const Accordion = forwardRef<HTMLDivElement, IAccordionProps>(
         expandedSection,
         currentIndexRef,
         borderless,
-        size,
+        accordionSize,
       }),
       [
         level,
@@ -68,7 +71,7 @@ export const Accordion = forwardRef<HTMLDivElement, IAccordionProps>(
         expandedSection,
         currentIndexRef,
         borderless,
-        size,
+        accordionSize,
       ],
     );
 
@@ -90,6 +93,6 @@ Accordion.displayName = 'Accordion';
 Accordion.defaultProps = {
   borderless: false,
   isExpandable: false,
-  size: 'normal',
+  accordionSize: 'normal',
   onChange: () => undefined,
 };

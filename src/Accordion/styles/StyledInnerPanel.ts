@@ -5,11 +5,11 @@ import { getComponentStyles } from '../../theme/utils';
 const COMPONENT_ID = 'Accordion.inner_panel';
 
 export interface IStyledInnerPanelProps {
-  size?: 'small' | 'normal';
+  accordionSize?: 'small' | 'normal';
   isExpanded?: boolean;
 }
 
-function getSizeStyles(
+function getaccordionSizeStyles(
   props: IStyledInnerPanelProps & ThemeProps<DefaultTheme>,
 ) {
   const { base } = props.theme.space;
@@ -18,7 +18,7 @@ function getSizeStyles(
   let horizontalValue;
   let bottomPaddingValue;
 
-  if (props.size === 'small') {
+  if (props.accordionSize === 'small') {
     topPaddingValue = `${base * 2}px`;
     horizontalValue = `${base * 3}px`;
     bottomPaddingValue = `${base * 4}px`;
@@ -43,12 +43,12 @@ export const StyledInnerPanel = styled.div.attrs<IStyledInnerPanelProps>({
   transition-duration: 500ms;
   transition-timing-function: ease-in-out;
 
-  ${props => getSizeStyles(props)};
+  ${props => getaccordionSizeStyles(props)};
 
   ${props => getComponentStyles(COMPONENT_ID, props)};
 `;
 
 StyledInnerPanel.defaultProps = {
   theme: DEFAULT_THEME,
-  size: 'normal',
+  accordionSize: 'normal',
 };

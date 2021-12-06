@@ -8,7 +8,7 @@ export interface IStyledHeaderProps {
   isFocused?: boolean;
   isDisabled?: boolean;
   isExpanded?: boolean;
-  size?: 'small' | 'normal';
+  accordionSize?: 'small' | 'normal';
 }
 
 function getPaddingStyles(
@@ -19,7 +19,7 @@ function getPaddingStyles(
   let horizontalPaddingValue;
   let verticalPaddingValue;
 
-  if (props.size === 'small') {
+  if (props.accordionSize === 'small') {
     horizontalPaddingValue = `${base * 2}px`;
     verticalPaddingValue = `${base * 4}px`;
   } else {
@@ -83,5 +83,5 @@ export const StyledHeader = styled.div.attrs<IStyledHeaderProps>({
 
 StyledHeader.defaultProps = {
   theme: DEFAULT_THEME,
-  size: 'normal',
+  accordionSize: 'normal',
 };

@@ -1,11 +1,4 @@
-import React, {
-  FocusEvent,
-  forwardRef,
-  HTMLAttributes,
-  MouseEvent,
-  ReactNode,
-  useState,
-} from 'react';
+import React, { FocusEvent, forwardRef, HTMLAttributes, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useAccordionContext } from '../contexts/useAccordionContext';
 import { useAccordionSectionContext } from '../contexts/useAccordionSectionContext';
@@ -15,26 +8,19 @@ import { StyledRotateIcon } from './styles/StyledRotateIcon';
 import composeEventHandler from '../hooks/utils/composeEventHandler';
 import { ChevronDown } from 'blinkicon';
 
-export interface IAccordionHeaderProps {
-  children?: ReactNode;
-  onClick?: (event: MouseEvent<any>) => void;
-  onFocus?: (event: FocusEvent<any>) => void;
-  onBlur?: (event: FocusEvent<any>) => void;
-}
-
 const AccordionHeader = forwardRef<
   HTMLDivElement,
   HTMLAttributes<HTMLDivElement>
 >(({ onClick, onFocus, onBlur, ...props }, ref) => {
   const {
     level: ariaLevel,
-    accordionType,
+    accordionSize,
     expandedSection,
     getHeaderProps,
     getButtonTriggerProps,
   } = useAccordionContext();
 
-  const sectionIndex = useAccordionSectionContext();
+  const { sectionIndex, isDisabled } = useAccordionSectionContext();
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const isExpanded = expandedSection.includes(sectionIndex);
 
@@ -59,9 +45,10 @@ const AccordionHeader = forwardRef<
       {...getHeaderProps({
         ref,
         ariaLevel,
-        accordionType,
+        accordionSize,
         isExpanded,
         isFocused,
+        isDisabled,
         onClick: composeEventHandler(onClick, onTriggerClick),
         onFocus: composeEventHandler(onFocus, onHeaderFocus),
         onBlur: composeEventHandler(onBlur, () => setIsFocused(false)),

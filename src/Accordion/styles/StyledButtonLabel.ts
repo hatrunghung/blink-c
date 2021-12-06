@@ -7,7 +7,7 @@ export const COMPONENT_ID = 'Accordion.button_label';
 export interface IStyledButtonLabelProps {
   isDisabled?: boolean;
   isExpanded?: boolean;
-  size: 'small' | 'normal';
+  accordionSize: 'small' | 'normal';
 }
 
 function getPaddingStyles(
@@ -17,7 +17,7 @@ function getPaddingStyles(
   const horizontalPaddingValue = 0;
   let verticalPaddingValue;
 
-  if (props.size === 'small') {
+  if (props.accordionSize === 'small') {
     verticalPaddingValue = `${base * 2}px`;
   } else {
     verticalPaddingValue = `${base * 4}px`;
@@ -60,5 +60,5 @@ export const StyledButtonLabel = styled.button.attrs<IStyledButtonLabelProps>({
 
 StyledButtonLabel.defaultProps = {
   theme: DEFAULT_THEME,
-  size: 'normal',
+  accordionSize: 'normal',
 };
