@@ -147,7 +147,7 @@ function getColorStyles(
       background-color: ${props.isPrimary && props.isSelected
         ? activeColor
         : baseColor};
-      color: ${props.theme.colors.background};
+      color: ${props.theme.colors.light_background};
 
       &:hover {
         background-color: ${hoverColor};
@@ -228,7 +228,7 @@ function getButtonGroupStyles(
   const isPrimary = props.isPrimary;
   const borderWidths = props.theme.borderWidths.sm;
   const rtl = props.theme.rtl;
-  const lightBorderColor = props.theme.colors.background;
+  const lightBorderColor = props.theme.colors.light_background;
 
   return css`
     position: relative;

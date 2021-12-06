@@ -3,7 +3,8 @@ import { IUseAccordionPropGetters } from '../hooks/useAccordion';
 
 export interface IAccordionContext extends IUseAccordionPropGetters {
   level: number;
-  accordionType?: 'basic' | 'borderless' | 'ghost';
+  borderless?: boolean;
+  accordionSize?: 'small' | 'normal';
   currentIndexRef?: MutableRefObject<number>;
   expandedSection?: number[];
 }

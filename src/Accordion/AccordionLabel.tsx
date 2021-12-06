@@ -1,18 +1,18 @@
 import React, { ButtonHTMLAttributes, forwardRef } from 'react';
 import { useAccordionContext } from '../contexts/useAccordionContext';
 import { useAccordionSectionContext } from '../contexts/useAccordionSectionContext';
-import { StyledButtonLabel } from './StyledButtonLabel';
+import { StyledButtonLabel } from './styles/StyledButtonLabel';
 
-const AccordionLabel = forwardRef<
+export const AccordionLabel = forwardRef<
   HTMLButtonElement,
   ButtonHTMLAttributes<HTMLButtonElement>
 >((props, ref) => {
   const {
     expandedSection,
-    accordionType,
+    accordionSize,
     getButtonTriggerProps,
   } = useAccordionContext();
-  const sectionIndex = useAccordionSectionContext();
+  const { sectionIndex, isDisabled } = useAccordionSectionContext();
 
   const isExpanded = expandedSection.includes(sectionIndex);
 
@@ -22,7 +22,8 @@ const AccordionLabel = forwardRef<
         ref,
         index: sectionIndex,
         isExpanded,
-        accordionType,
+        isDisabled,
+        accordionSize,
       })}
     >
       {props.children}
@@ -31,5 +32,3 @@ const AccordionLabel = forwardRef<
 });
 
 AccordionLabel.displayName = 'AccordionLabel';
-
-export default AccordionLabel;
