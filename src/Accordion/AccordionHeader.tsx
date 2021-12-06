@@ -8,7 +8,7 @@ import { StyledRotateIcon } from './styles/StyledRotateIcon';
 import composeEventHandler from '../hooks/utils/composeEventHandler';
 import { ChevronDown } from 'blinkicon';
 
-const AccordionHeader = forwardRef<
+export const AccordionHeader = forwardRef<
   HTMLDivElement,
   HTMLAttributes<HTMLDivElement>
 >(({ onClick, onFocus, onBlur, ...props }, ref) => {
@@ -69,5 +69,3 @@ AccordionHeader.propTypes = {
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
 };
-
-export default AccordionHeader;

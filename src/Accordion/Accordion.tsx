@@ -13,9 +13,9 @@ import { AccordionContext } from '../contexts/useAccordionContext';
 import { useAccordion } from '../hooks/useAccordion';
 import { StyledAccordion } from './styles/StyledAccordion';
 import { AccordionSection } from './AccordionSection';
-import AccordionHeader from './AccordionHeader';
-import AccordionLabel from './AccordionLabel';
-import AccordionPanel from './AccordionPanel';
+import { AccordionHeader } from './AccordionHeader';
+import { AccordionLabel } from './AccordionLabel';
+import { AccordionPanel } from './AccordionPanel';
 
 interface IStaticAccordionExport<T, P>
   extends ForwardRefExoticComponent<PropsWithoutRef<P> & RefAttributes<T>> {

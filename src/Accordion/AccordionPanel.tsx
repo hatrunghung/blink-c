@@ -4,7 +4,7 @@ import { useAccordionSectionContext } from '../contexts/useAccordionSectionConte
 import { StyledInnerPanel } from './styles/StyledInnerPanel';
 import { StyledPanel } from './styles/StyledPanel';
 
-const AccordionPanel = forwardRef<
+export const AccordionPanel = forwardRef<
   HTMLDivElement,
   HTMLAttributes<HTMLDivElement>
 >((props, ref) => {
@@ -35,5 +35,3 @@ const AccordionPanel = forwardRef<
 });
 
 AccordionPanel.displayName = 'AccordionPanel';
-
-export default AccordionPanel;
