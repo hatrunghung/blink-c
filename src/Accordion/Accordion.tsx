@@ -29,6 +29,7 @@ export interface IAccordionProps
   extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
   level: number;
   isExpandable?: boolean;
+  isCollapsible?: boolean;
   accordionSize?: 'small' | 'normal';
   borderless?: boolean;
   onChange?: (index: number) => void;
@@ -36,6 +37,15 @@ export interface IAccordionProps
 
 export const Accordion = forwardRef<HTMLDivElement, IAccordionProps>(
   (
+    {
+      isExpandable,
+      isCollapsible,
+      onChange,
+      level,
+      accordionSize,
+      borderless,
+      ...props
+    },
     { isExpandable, onChange, level, accordionSize, borderless, ...props },
     ref,
   ) => {
@@ -44,7 +54,11 @@ export const Accordion = forwardRef<HTMLDivElement, IAccordionProps>(
       getButtonTriggerProps,
       getPanelProps,
       expandedSection,
-    } = useAccordion({ onChange, expandable: isExpandable });
+    } = useAccordion({
+      onChange,
+      expandable: isExpandable,
+      collapsible: isCollapsible,
+    });
 
     const currentIndexRef = useRef(0);
 

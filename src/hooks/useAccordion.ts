@@ -7,6 +7,7 @@ export interface IUseAccordionProps {
   idPrefix?: string;
   onChange?: (index: number) => void;
   expandable?: boolean;
+  collapsible?: boolean;
 }
 
 export interface IHeaderProps extends HTMLProps<any> {
@@ -39,6 +40,7 @@ export function useAccordion({
   idPrefix,
   onChange,
   expandable = true,
+  collapsible = true,
 }: IUseAccordionProps = {}): IUseAccordionReturnValue {
   const seed = useUIDSeed();
   const [prefix] = useState<string>(idPrefix || seed('accordion'));
@@ -59,19 +61,21 @@ export function useAccordion({
           );
         }
       } else {
-        const indexPosition = expanded.indexOf(index);
-        setExpanded(currentExpanded =>
-          currentExpanded
-            .slice(0, indexPosition)
-            .concat(currentExpanded.slice(indexPosition + 1)),
-        );
+        if (collapsible) {
+          const indexPosition = expanded.indexOf(index);
+          setExpanded(currentExpanded =>
+            currentExpanded
+              .slice(0, indexPosition)
+              .concat(currentExpanded.slice(indexPosition + 1)),
+          );
+        }
       }
 
       if (onChange) {
         onChange(index);
       }
     },
-    [expanded, setExpanded, expandable, onChange],
+    [collapsible, expanded, setExpanded, expandable, onChange],
   );
 
   const getHeaderProps = ({
@@ -105,6 +109,7 @@ export function useAccordion({
     }
 
     const isExpanded = expanded.includes(index);
+    const isDisabled = isExpanded && !collapsible;
 
     return {
       id: `${triggerId}:${index}`,
@@ -112,15 +117,14 @@ export function useAccordion({
       tabIndex,
       'aria-expanded': isExpanded,
       'aria-controls': `${panelId}:${index}`,
-      // may change in the future
-      'aria-disabled': false,
+      'aria-disabled': isDisabled,
       onClick: composeEventHandler(() => toggle(index), props.onClick),
       onKeyDown: composeEventHandler(
         props.onKeyDown,
         (event: KeyboardEvent) => {
           if (event.key === KEYS.ENTER || event.key === KEYS.SPACE) {
-            toggle(index);
             event.preventDefault();
+            toggle(index);
           }
         },
       ),
