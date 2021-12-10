@@ -20,7 +20,7 @@ function getaccordionSizeStyles(
 
   if (props.accordionSize === 'small') {
     topPaddingValue = `${base * 2}px`;
-    horizontalValue = `${base * 3}px`;
+    horizontalValue = `${base * 4}px`;
     bottomPaddingValue = `${base * 4}px`;
   } else {
     topPaddingValue = `${base * 2}px`;
