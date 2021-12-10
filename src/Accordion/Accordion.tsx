@@ -46,7 +46,6 @@ export const Accordion = forwardRef<HTMLDivElement, IAccordionProps>(
       borderless,
       ...props
     },
-    { isExpandable, onChange, level, accordionSize, borderless, ...props },
     ref,
   ) => {
     const {
