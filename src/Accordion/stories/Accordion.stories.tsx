@@ -14,12 +14,14 @@ export default {
 } as Meta;
 
 interface IStoryProps {
+  isCollapsible: boolean;
   isExpandable: boolean;
   borderless: boolean;
   size: 'small' | 'normal';
 }
 
 export const Default: Story<IStoryProps> = ({
+  isCollapsible,
   isExpandable,
   borderless,
   size,
@@ -28,6 +30,7 @@ export const Default: Story<IStoryProps> = ({
     <Accordion
       level={3}
       isExpandable={isExpandable}
+      isCollapsible={isCollapsible}
       borderless={borderless}
       accordionSize={size}
     >
@@ -92,6 +95,7 @@ export const Default: Story<IStoryProps> = ({
 };
 
 Default.args = {
+  isCollapsible: true,
   isExpandable: true,
   size: 'normal',
   borderless: false,
@@ -99,6 +103,9 @@ Default.args = {
 
 Default.argTypes = {
   isExpandable: {
+    control: 'boolean',
+  },
+  isCollapsible: {
     control: 'boolean',
   },
   size: {
