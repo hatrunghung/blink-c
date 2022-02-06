@@ -1,28 +1,25 @@
-import { HTMLProps } from 'react';
-
 export interface IUseBreadCrumbReturnValue {
-  getContainerProps: <T>(options?: T & HTMLProps<any>) => T & HTMLProps<any>;
-  getCurrentPageProps: <T>(options?: T & HTMLProps<any>) => T & HTMLProps<any>;
+  containerProps: {
+    'aria-label': string;
+  };
+  currentPageProps: {
+    'aria-current': string;
+  };
 }
 
+// in this component, accessibility is the only "common ground" in most use cases
+// so a collection of prop is more than enough, rather than prop getters
 export function useBreadcrumb(): IUseBreadCrumbReturnValue {
-  const getContainerProps = ({ role, ...props }: HTMLProps<any> = {}): any => {
-    return {
-      'aria-label': 'Breadcrumb',
-      role,
-      ...props,
-    };
+  const containerProps = {
+    'aria-label': 'Breadcrumb',
   };
 
-  const getCurrentPageProps = (props: HTMLProps<any> = {}): any => {
-    return {
-      'aria-current': 'page',
-      ...props,
-    };
+  const currentPageProps = {
+    'aria-current': 'page',
   };
 
   return {
-    getContainerProps,
-    getCurrentPageProps,
+    containerProps,
+    currentPageProps,
   };
 }

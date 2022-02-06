@@ -11,7 +11,7 @@ import { StyledBreadcrumbItem } from './StyledBreadcrumbItem';
 
 export const Breadcrumb: FunctionComponent<RefAttributes<any>> = forwardRef(
   (props, ref) => {
-    const { getContainerProps, getCurrentPageProps } = useBreadcrumb();
+    const { containerProps, currentPageProps } = useBreadcrumb();
 
     const childrenCount = Children.count(props.children);
 
@@ -21,7 +21,7 @@ export const Breadcrumb: FunctionComponent<RefAttributes<any>> = forwardRef(
       if (isLastItem) {
         return (
           <StyledBreadcrumbItem>
-            {cloneElement(child as any, getCurrentPageProps())}
+            {cloneElement(child as any, currentPageProps)}
           </StyledBreadcrumbItem>
         );
       }
@@ -30,7 +30,7 @@ export const Breadcrumb: FunctionComponent<RefAttributes<any>> = forwardRef(
     });
 
     return (
-      <nav ref={ref} {...getContainerProps({ role: null, ...props } as any)}>
+      <nav ref={ref} {...containerProps}>
         <StyledBreadcrumb>{childrenMapped}</StyledBreadcrumb>
       </nav>
     );
