@@ -47,8 +47,8 @@ export const ArrayTextAlign: Array<TEXT_ALIGN> = [
   'justify',
 ];
 
-export type GRID_NUMBER = string | number;
-export type BREAKPOINT = GRID_NUMBER | boolean;
+export type FLEX_NUMBER = string | number;
+export type BREAKPOINT = FLEX_NUMBER | boolean;
 
 export type SPACE = 'base' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 export const ArraySpace: Array<SPACE> = [

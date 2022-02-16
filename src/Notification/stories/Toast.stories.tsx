@@ -3,7 +3,7 @@ import React, { FC, useCallback, useState } from 'react';
 import styled from 'styled-components';
 import { Story, Meta } from '@storybook/react';
 import { Button } from '../../Button';
-import { Grid, Row, Col } from '../../Grid';
+import { Flex, Row, Col } from '../../Flex';
 import { useToast } from '../../hooks';
 import { ToastProvider } from '..';
 import { ToastPlacement } from '..';
@@ -92,7 +92,7 @@ const NotificationExample: FC = () => {
 
 export const Default: Story = () => {
   return (
-    <Grid>
+    <Flex>
       <Row>
         <Col sm={24} offsetSm={0} md={12} offsetMd={6} lg={8} offsetLg={8}>
           <ToastProvider>
@@ -100,7 +100,7 @@ export const Default: Story = () => {
           </ToastProvider>
         </Col>
       </Row>
-    </Grid>
+    </Flex>
   );
 };
 

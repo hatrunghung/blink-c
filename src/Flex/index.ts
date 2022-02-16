@@ -1,5 +1,5 @@
-export { default as Grid } from './Grid';
-export type { IGridProps } from './Grid';
+export { default as Flex } from './Flex';
+export type { IFlexProps } from './Flex';
 
 export { default as Row } from './Row';
 export type { IRowProps } from './Row';

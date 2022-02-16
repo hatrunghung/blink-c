@@ -1,14 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { AnchorButton } from '../';
-import { Col, Grid, Row } from '../../Grid';
+import { Col, Flex, Row } from '../../Flex';
 export default {
   title: 'Components/Button/AnchorButton',
   component: AnchorButton,
 } as Meta;
 
 export const Default: Story = ({ anchorText, isDanger, isExternal }) => (
-  <Grid>
+  <Flex>
     <Row>
       <Col textAlign="center">
         <AnchorButton isDanger={isDanger} isExternal={isExternal}>
@@ -16,7 +16,7 @@ export const Default: Story = ({ anchorText, isDanger, isExternal }) => (
         </AnchorButton>
       </Col>
     </Row>
-  </Grid>
+  </Flex>
 );
 
 Default.args = {

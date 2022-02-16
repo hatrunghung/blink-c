@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import styled from 'styled-components';
 import { Story, Meta } from '@storybook/react';
 import Checkbox from '../Checkbox';
-import { Grid, Row, Col } from '../../Grid';
+import { Flex, Row, Col } from '../../Flex';
 import { useCheckbox } from '../../hooks/useCheckbox';
 
 export default {
@@ -70,7 +70,7 @@ export const Default: Story = () => {
   };
 
   return (
-    <Grid>
+    <Flex>
       <Row>
         <Col size={16}>
           <Checkbox
@@ -121,6 +121,6 @@ export const Default: Story = () => {
           </Checkbox>
         </Col>
       </Row>
-    </Grid>
+    </Flex>
   );
 };

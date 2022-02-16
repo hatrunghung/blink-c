@@ -4,14 +4,14 @@ import DEFAULT_THEME from '../theme';
 import { getColors, getComponentStyles } from '../theme/utils';
 import { SPACE } from './types';
 
-const COMPONENT_ID = 'Grid.grid';
+const COMPONENT_ID = 'Flex.flex';
 
-export interface IStyledGridProps extends ThemeProps<DefaultTheme> {
+export interface IStyledFlexProps extends ThemeProps<DefaultTheme> {
   gutters?: SPACE;
   debug?: boolean;
 }
 
-function getColorStyles(props: IStyledGridProps & ThemeProps<DefaultTheme>) {
+function getColorStyles(props: IStyledFlexProps & ThemeProps<DefaultTheme>) {
   const borderColor = getColors(
     props.theme.palette.volcano,
     400,
@@ -26,7 +26,7 @@ function getColorStyles(props: IStyledGridProps & ThemeProps<DefaultTheme>) {
   `;
 }
 
-function getSizeStyles(props: IStyledGridProps) {
+function getSizeStyles(props: IStyledFlexProps) {
   const padding = props.gutters
     ? math(`${props.theme.space[props.gutters]} / 2`)
     : 0;
@@ -37,9 +37,9 @@ function getSizeStyles(props: IStyledGridProps) {
   `;
 }
 
-export const StyledGrid = styled.div.attrs<IStyledGridProps>({
+export const StyledFlex = styled.div.attrs<IStyledFlexProps>({
   'data-blink-id': COMPONENT_ID,
-})<IStyledGridProps>`
+})<IStyledFlexProps>`
   direction: ${props => (props.theme.rtl ? 'rtl' : 'ltr')};
   margin-right: auto;
   margin-left: auto;
@@ -52,7 +52,7 @@ export const StyledGrid = styled.div.attrs<IStyledGridProps>({
   ${props => getComponentStyles(COMPONENT_ID, props)};
 `;
 
-StyledGrid.defaultProps = {
+StyledFlex.defaultProps = {
   theme: DEFAULT_THEME,
   gutters: 'md',
 };

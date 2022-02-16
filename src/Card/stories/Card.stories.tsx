@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { Card } from '../';
-import { Col, Grid, Row } from '../../Grid';
+import { Col, Flex, Row } from '../../Flex';
 import { Button } from '../../Button';
 
 export default {
@@ -21,7 +21,7 @@ export const Default: Story = ({
   contentText,
 }) => {
   return (
-    <Grid>
+    <Flex>
       <Row>
         <Col>
           <Card
@@ -39,7 +39,7 @@ export const Default: Story = ({
           </Card>
         </Col>
       </Row>
-    </Grid>
+    </Flex>
   );
 };
 

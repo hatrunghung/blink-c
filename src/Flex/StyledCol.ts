@@ -5,17 +5,17 @@ import { getColors, getComponentStyles } from '../theme/utils';
 import {
   ALIGN_SELF,
   BREAKPOINT,
-  GRID_NUMBER,
+  FLEX_NUMBER,
   SPACE,
   TEXT_ALIGN,
 } from './types';
 
-const COMPONENT_ID = 'Grid.col';
+const COMPONENT_ID = 'Flex.col';
 
 export interface IStyledColProps extends ThemeProps<DefaultTheme> {
-  columns?: GRID_NUMBER;
+  columns?: FLEX_NUMBER;
   gutters?: SPACE;
-  size?: GRID_NUMBER;
+  size?: FLEX_NUMBER;
   xs?: BREAKPOINT;
   sm?: BREAKPOINT;
   md?: BREAKPOINT;
@@ -33,18 +33,18 @@ export interface IStyledColProps extends ThemeProps<DefaultTheme> {
   textAlignMd?: TEXT_ALIGN;
   textAlignLg?: TEXT_ALIGN;
   textAlignXl?: TEXT_ALIGN;
-  offset?: GRID_NUMBER;
-  offsetXs?: GRID_NUMBER;
-  offsetSm?: GRID_NUMBER;
-  offsetMd?: GRID_NUMBER;
-  offsetLg?: GRID_NUMBER;
-  offsetXl?: GRID_NUMBER;
-  order?: GRID_NUMBER;
-  orderXs?: GRID_NUMBER;
-  orderSm?: GRID_NUMBER;
-  orderMd?: GRID_NUMBER;
-  orderLg?: GRID_NUMBER;
-  orderXl?: GRID_NUMBER;
+  offset?: FLEX_NUMBER;
+  offsetXs?: FLEX_NUMBER;
+  offsetSm?: FLEX_NUMBER;
+  offsetMd?: FLEX_NUMBER;
+  offsetLg?: FLEX_NUMBER;
+  offsetXl?: FLEX_NUMBER;
+  order?: FLEX_NUMBER;
+  orderXs?: FLEX_NUMBER;
+  orderSm?: FLEX_NUMBER;
+  orderMd?: FLEX_NUMBER;
+  orderLg?: FLEX_NUMBER;
+  orderXl?: FLEX_NUMBER;
   debug?: boolean;
 }
 
@@ -77,8 +77,8 @@ function getFlexStyles(
   size: BREAKPOINT | undefined,
   alignSelf: ALIGN_SELF | undefined,
   textAlign: TEXT_ALIGN | undefined,
-  offset: GRID_NUMBER | undefined,
-  order: GRID_NUMBER | undefined,
+  offset: FLEX_NUMBER | undefined,
+  order: FLEX_NUMBER | undefined,
   props: IStyledColProps,
 ) {
   const margin = offset && `${math(`${offset} / ${props.columns} * 100`)}%`;
@@ -137,8 +137,8 @@ function getResponsiveStyles(
   responsiveSize: BREAKPOINT | undefined,
   responsiveAlignSelf: ALIGN_SELF | undefined,
   responsiveTextAlign: TEXT_ALIGN | undefined,
-  responsiveOffset: GRID_NUMBER | undefined,
-  responsiveOrder: GRID_NUMBER | undefined,
+  responsiveOffset: FLEX_NUMBER | undefined,
+  responsiveOrder: FLEX_NUMBER | undefined,
   props: IStyledColProps,
 ) {
   return css`

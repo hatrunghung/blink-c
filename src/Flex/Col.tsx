@@ -6,13 +6,13 @@ import {
   ArrayAlignSelf,
   ArrayTextAlign,
   BREAKPOINT,
-  GRID_NUMBER,
+  FLEX_NUMBER,
   TEXT_ALIGN,
 } from './types';
-import { useGridContext } from '../contexts/GridContext';
+import { useFlexContext } from '../contexts/FlexContext';
 
 export interface IColProps extends HTMLAttributes<HTMLDivElement> {
-  size?: GRID_NUMBER;
+  size?: FLEX_NUMBER;
   xs?: BREAKPOINT;
   sm?: BREAKPOINT;
   md?: BREAKPOINT;
@@ -30,29 +30,29 @@ export interface IColProps extends HTMLAttributes<HTMLDivElement> {
   textAlignMd?: TEXT_ALIGN;
   textAlignLg?: TEXT_ALIGN;
   textAlignXl?: TEXT_ALIGN;
-  offset?: GRID_NUMBER;
-  offsetXs?: GRID_NUMBER;
-  offsetSm?: GRID_NUMBER;
-  offsetMd?: GRID_NUMBER;
-  offsetLg?: GRID_NUMBER;
-  offsetXl?: GRID_NUMBER;
-  order?: GRID_NUMBER;
-  orderXs?: GRID_NUMBER;
-  orderSm?: GRID_NUMBER;
-  orderMd?: GRID_NUMBER;
-  orderLg?: GRID_NUMBER;
-  orderXl?: GRID_NUMBER;
+  offset?: FLEX_NUMBER;
+  offsetXs?: FLEX_NUMBER;
+  offsetSm?: FLEX_NUMBER;
+  offsetMd?: FLEX_NUMBER;
+  offsetLg?: FLEX_NUMBER;
+  offsetXl?: FLEX_NUMBER;
+  order?: FLEX_NUMBER;
+  orderXs?: FLEX_NUMBER;
+  orderSm?: FLEX_NUMBER;
+  orderMd?: FLEX_NUMBER;
+  orderLg?: FLEX_NUMBER;
+  orderXl?: FLEX_NUMBER;
 }
 
 const Col = forwardRef<HTMLDivElement, IColProps>((props, ref) => {
-  const gridContext = useGridContext();
+  const flexContext = useFlexContext();
 
   return (
     <StyledCol
       size={props.size}
-      columns={gridContext.columns}
-      debug={gridContext.debug}
-      gutters={gridContext.gutters}
+      columns={flexContext.columns}
+      debug={flexContext.debug}
+      gutters={flexContext.gutters}
       ref={ref}
       {...props}
     />

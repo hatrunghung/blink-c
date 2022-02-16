@@ -16,7 +16,7 @@ export {
 // components
 export { Accordion } from './Accordion';
 
-export type { IAccordionProps, IAccordionHeaderProps } from './Accordion';
+export type { IAccordionProps } from './Accordion';
 
 export { Breadcrumb } from './Breadcrumb';
 
@@ -45,8 +45,8 @@ export type { ICardProps } from './Card';
 export { Checkbox } from './Checkbox';
 export type { ICheckboxProps } from './Checkbox';
 
-export { Grid, Row, Col } from './Grid';
-export type { IGridProps, IRowProps, IColProps } from './Grid';
+export { Flex, Row, Col } from './Flex';
+export type { IFlexProps, IRowProps, IColProps } from './Flex';
 
 export { Notification, ToastProvider } from './Notification';
 export type {

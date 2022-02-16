@@ -10,7 +10,7 @@ import {
   JUSTIFY_CONTENT,
   WRAP,
 } from './types';
-import { useGridContext } from '../contexts/GridContext';
+import { useFlexContext } from '../contexts/FlexContext';
 import { StyledRow } from './StyledRow';
 
 export interface IRowProps extends HTMLAttributes<HTMLDivElement> {
@@ -57,14 +57,14 @@ export interface IRowProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Row = forwardRef<HTMLDivElement, IRowProps>((props, ref) => {
-  const gridContext = useGridContext();
+  const flexContext = useFlexContext();
 
   return (
     <StyledRow
-      gutters={gridContext.gutters}
+      gutters={flexContext.gutters}
       ref={ref}
       wrap={props.wrap}
-      debug={gridContext.debug}
+      debug={flexContext.debug}
       {...props}
     />
   );

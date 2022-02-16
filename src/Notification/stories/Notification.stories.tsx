@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Story, Meta } from '@storybook/react';
 import Notification from '../Notification';
-import { Grid, Row, Col } from '../../Grid';
+import { Flex, Row, Col } from '../../Flex';
 import NotificationIcon from '../NotificationIcon';
 import NotificationClose from '../NotificationClose';
 import NotificationTitle from '../NotificationTitle';
@@ -25,7 +25,7 @@ const StyledDivider = styled.div`
 
 export const Default: Story = ({ type }) => {
   return (
-    <Grid>
+    <Flex>
       <Row>
         <Col>
           <Notification isAlert={false} type={type}>
@@ -83,7 +83,7 @@ export const Default: Story = ({ type }) => {
           </Notification>
         </Col>
       </Row>
-    </Grid>
+    </Flex>
   );
 };
 

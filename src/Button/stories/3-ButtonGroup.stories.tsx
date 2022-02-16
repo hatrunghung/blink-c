@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react';
 import { Button, ButtonGroup } from '../';
-import { Col, Grid, Row } from '../../Grid';
+import { Col, Flex, Row } from '../../Flex';
 
 export default {
   title: 'Components/Button/ButtonGroup',
@@ -18,7 +18,7 @@ export const Default: Story = ({
   const [selectedItem, setSelectedItem] = useState('button-1');
 
   return (
-    <Grid>
+    <Flex>
       <Row>
         <Col textAlign="center">
           <ButtonGroup selectedItem={selectedItem} onSelect={setSelectedItem}>
@@ -65,7 +65,7 @@ export const Default: Story = ({
           </ButtonGroup>
         </Col>
       </Row>
-    </Grid>
+    </Flex>
   );
 };
 

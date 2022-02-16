@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { ToggleButton } from '../';
-import { Col, Grid, Row } from '../../Grid';
+import { Col, Flex, Row } from '../../Flex';
 
 export default {
   title: 'Components/Button/ToggleButton',
@@ -19,7 +19,7 @@ export const Default: Story = ({
   isLink,
   isStretched,
 }) => (
-  <Grid>
+  <Flex>
     <Row>
       <Col textAlign="center">
         <ToggleButton
@@ -36,7 +36,7 @@ export const Default: Story = ({
         </ToggleButton>
       </Col>
     </Row>
-  </Grid>
+  </Flex>
 );
 
 Default.args = {

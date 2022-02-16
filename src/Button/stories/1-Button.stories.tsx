@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { Button } from '../';
-import { Col, Grid, Row } from '../../Grid';
+import { Col, Flex, Row } from '../../Flex';
 import { Download, ChevronDown } from 'blinkicon';
 
 export default {
@@ -24,7 +24,7 @@ export const Default: Story = ({
   startIcon,
   endIcon,
 }) => (
-  <Grid>
+  <Flex>
     <Row>
       <Col textAlign="center">
         <Button
@@ -58,7 +58,7 @@ export const Default: Story = ({
         </Button>
       </Col>
     </Row>
-  </Grid>
+  </Flex>
 );
 
 Default.args = {

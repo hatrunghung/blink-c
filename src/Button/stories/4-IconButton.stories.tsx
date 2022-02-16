@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { IconButton } from '../';
-import { Col, Grid, Row } from '../../Grid';
+import { Col, Flex, Row } from '../../Flex';
 import { Delete, Send, Home, ChevronDown } from 'blinkicon';
 import styled from 'styled-components';
 
@@ -24,7 +24,7 @@ export const Default: Story = ({
   disabled,
   focusInset,
 }) => (
-  <Grid>
+  <Flex>
     <Row>
       <Col textAlign="center">
         <StyledDiv>
@@ -93,7 +93,7 @@ export const Default: Story = ({
         </StyledDiv>
       </Col>
     </Row>
-  </Grid>
+  </Flex>
 );
 
 Default.argTypes = {

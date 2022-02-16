@@ -2,7 +2,7 @@ import React, { ChangeEvent, useState } from 'react';
 import styled from 'styled-components';
 import { Story, Meta } from '@storybook/react';
 import { Radio } from '../';
-import { Grid, Row, Col } from '../../Grid';
+import { Flex, Row, Col } from '../../Flex';
 
 export default {
   title: 'Forms/Radio/Radio',
@@ -22,7 +22,7 @@ export const Default: Story = () => {
   };
 
   return (
-    <Grid>
+    <Flex>
       <Row>
         <Col>
           <StyledQuestion>Blackpink fandom ?</StyledQuestion>
@@ -52,6 +52,6 @@ export const Default: Story = () => {
           </Radio>
         </Col>
       </Row>
-    </Grid>
+    </Flex>
   );
 };

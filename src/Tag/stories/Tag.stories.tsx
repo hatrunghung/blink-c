@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react';
 import Tag from '../Tag';
-import { Grid, Row, Col } from '../../Grid';
+import { Flex, Row, Col } from '../../Flex';
 import { Button } from '../../Button';
 import { CheckCircle, Stop, CloseCircle } from 'blinkicon';
 
@@ -16,7 +16,7 @@ export const Default: Story = () => {
   const toggleOpen = () => setIsOpen(!isOpen);
 
   return (
-    <Grid>
+    <Flex>
       <Row>
         <Col textAlign="center">
           <Tag>Basic</Tag>
@@ -83,6 +83,6 @@ export const Default: Story = () => {
           <Tag color="#87d068">#87d068</Tag>
         </Col>
       </Row>
-    </Grid>
+    </Flex>
   );
 };
