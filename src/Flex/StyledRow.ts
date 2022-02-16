@@ -4,7 +4,7 @@ import { ALIGN_ITEMS, DIRECTION, JUSTIFY_CONTENT, SPACE, WRAP } from './types';
 import { getColors, getComponentStyles } from '../theme/utils';
 import DEFAULT_THEME from '../theme';
 
-const COMPONENT_ID = 'Grid.row';
+const COMPONENT_ID = 'Flex.row';
 
 export interface IStyledRowProps extends ThemeProps<DefaultTheme> {
   gutters?: SPACE;
