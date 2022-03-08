@@ -50,7 +50,16 @@ export const ArrayTextAlign: Array<TEXT_ALIGN> = [
 export type FLEX_NUMBER = string | number;
 export type BREAKPOINT = FLEX_NUMBER | boolean;
 
-export type SPACE = 'base' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+export type SPACE =
+  | 'base'
+  | 'xxs'
+  | 'xs'
+  | 'sm'
+  | 'md'
+  | 'lg'
+  | 'xl'
+  | 'xxl'
+  | 'xxxl';
 export const ArraySpace: Array<SPACE> = [
   'base',
   'xxs',
@@ -60,6 +69,7 @@ export const ArraySpace: Array<SPACE> = [
   'lg',
   'xl',
   'xxl',
+  'xxxl',
 ];
 
 export type WRAP = 'wrap' | 'nowrap' | 'wrap-reverse';

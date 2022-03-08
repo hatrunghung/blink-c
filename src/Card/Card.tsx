@@ -19,6 +19,13 @@ export interface ICardProps extends HTMLAttributes<HTMLDivElement> {
   thumbnailSrc?: string;
 }
 
+type CardComponent = ForwardRefExoticComponent<ICardProps> &
+  RefAttributes<HTMLDivElement> & {
+    Title: typeof CardTitle;
+    Body: typeof CardBody;
+    Action: typeof CardAction;
+  };
+
 const Card = forwardRef<HTMLDivElement, ICardProps>((props, ref) => {
   const value = useMemo(
     () => ({
@@ -45,14 +52,11 @@ Card.propTypes = {
   thumbnailSrc: PropTypes.string,
 };
 
-(Card as any).Title = CardTitle;
-(Card as any).Body = CardBody;
-(Card as any).Action = CardAction;
+// (Card as any).Title = CardTitle;
+// (Card as any).Body = CardBody;
+// (Card as any).Action = CardAction;
+(Card as CardComponent).Title = CardTitle;
+(Card as CardComponent).Body = CardBody;
+(Card as CardComponent).Action = CardAction;
 
-export default Card as ForwardRefExoticComponent<
-  ICardProps & RefAttributes<HTMLDivElement>
-> & {
-  Title: typeof CardTitle;
-  Body: typeof CardBody;
-  Action: typeof CardAction;
-};
+export default Card as CardComponent;

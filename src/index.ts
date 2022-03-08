@@ -48,6 +48,9 @@ export type { ICheckboxProps } from './Checkbox';
 export { Flex, Row, Col } from './Flex';
 export type { IFlexProps, IRowProps, IColProps } from './Flex';
 
+export { Grid } from './Grid';
+export type { IGridProps, IGridItemProps } from './Grid';
+
 export { Notification, ToastProvider } from './Notification';
 export type {
   INotificationProps,

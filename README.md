@@ -26,7 +26,7 @@ Blackpink and working to fit into real world project.
 - [ ] Dropdown
 - [ ] Flag / Notification / Toast
 - [x] Flex
-- [ ] Grid
+- [x] Grid
 - [ ] Heading
 - [ ] Input
 - [ ] Masonry
