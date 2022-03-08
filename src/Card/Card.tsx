@@ -52,9 +52,6 @@ Card.propTypes = {
   thumbnailSrc: PropTypes.string,
 };
 
-// (Card as any).Title = CardTitle;
-// (Card as any).Body = CardBody;
-// (Card as any).Action = CardAction;
 (Card as CardComponent).Title = CardTitle;
 (Card as CardComponent).Body = CardBody;
 (Card as CardComponent).Action = CardAction;
