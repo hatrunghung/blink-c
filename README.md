@@ -21,6 +21,7 @@ Blackpink and working to fit into real world project.
 - [x] Buttons
 - [x] Card
 - [x] Checkbox
+- [ ] Code
 - [ ] Combobox
 - [ ] Drawer
 - [ ] Dropdown
@@ -29,6 +30,8 @@ Blackpink and working to fit into real world project.
 - [x] Grid
 - [ ] Heading
 - [ ] Input
+- [ ] Kbd
+- [ ] Label
 - [ ] Masonry
 - [ ] Modal
 - [ ] Pagination
