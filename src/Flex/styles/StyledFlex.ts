@@ -1,8 +1,8 @@
 import styled, { css, DefaultTheme, ThemeProps } from 'styled-components';
 import { math } from 'polished';
-import DEFAULT_THEME from '../theme';
-import { getColors, getComponentStyles } from '../theme/utils';
-import { SPACE } from './types';
+import DEFAULT_THEME from '../../theme';
+import { getColors, getComponentStyles } from '../../theme/utils';
+import { SPACE } from '../types';
 
 const COMPONENT_ID = 'Flex.flex';
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import DEFAULT_THEME from '../theme';
-import { getColors, getComponentStyles } from '../theme/utils';
+import DEFAULT_THEME from '../../theme';
+import { getColors, getComponentStyles } from '../../theme/utils';
 
 const COMPONENT_ID = 'Checkbox.checkbox_title';
 

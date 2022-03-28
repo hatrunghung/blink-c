@@ -1,7 +1,7 @@
 import React, { HTMLAttributes, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { FlexContext } from '../contexts/FlexContext';
-import { StyledFlex } from './StyledFlex';
+import { StyledFlex } from './styles/StyledFlex';
 import { ArraySpace, FLEX_NUMBER, SPACE } from './types';
 
 export interface IFlexProps extends HTMLAttributes<HTMLDivElement> {

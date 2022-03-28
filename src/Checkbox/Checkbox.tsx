@@ -1,10 +1,10 @@
 import React, { forwardRef, InputHTMLAttributes } from 'react';
 import PropTypes from 'prop-types';
 import { SquareFilled, Check } from 'blinkicon';
-import { StyledCheckboxContainer } from './StyledCheckboxContainer';
-import { StyledHiddenCheckbox } from './StyledHiddenCheckbox';
-import { StyledVisibleCheckbox } from './StyledVisibleCheckbox';
-import { StyledCheckboxTitle } from './StyledCheckboxTitle';
+import { StyledCheckboxContainer } from './styles/StyledCheckboxContainer';
+import { StyledHiddenCheckbox } from './styles/StyledHiddenCheckbox';
+import { StyledVisibleCheckbox } from './styles/StyledVisibleCheckbox';
+import { StyledCheckboxTitle } from './styles/StyledCheckboxTitle';
 import { useCheckbox } from '../hooks/useCheckbox';
 
 export interface ICheckboxProps extends InputHTMLAttributes<HTMLInputElement> {

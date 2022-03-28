@@ -11,7 +11,7 @@ import {
   WRAP,
 } from './types';
 import { useFlexContext } from '../contexts/FlexContext';
-import { StyledRow } from './StyledRow';
+import { StyledRow } from './styles/StyledRow';
 
 export interface IRowProps extends HTMLAttributes<HTMLDivElement> {
   /**

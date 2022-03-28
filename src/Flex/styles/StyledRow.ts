@@ -1,8 +1,8 @@
 import styled, { css, ThemeProps, DefaultTheme } from 'styled-components';
 import { math } from 'polished';
-import { ALIGN_ITEMS, DIRECTION, JUSTIFY_CONTENT, SPACE, WRAP } from './types';
-import { getColors, getComponentStyles } from '../theme/utils';
-import DEFAULT_THEME from '../theme';
+import { ALIGN_ITEMS, DIRECTION, JUSTIFY_CONTENT, SPACE, WRAP } from '../types';
+import { getColors, getComponentStyles } from '../../theme/utils';
+import DEFAULT_THEME from '../../theme';
 
 const COMPONENT_ID = 'Flex.row';
 

@@ -1,6 +1,6 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
 import PropTypes from 'prop-types';
-import { StyledCol } from './StyledCol';
+import { StyledCol } from './styles/StyledCol';
 import {
   ALIGN_SELF,
   ArrayAlignSelf,

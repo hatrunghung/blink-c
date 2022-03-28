@@ -1,14 +1,14 @@
 import styled, { css, ThemeProps, DefaultTheme } from 'styled-components';
 import { math } from 'polished';
-import DEFAULT_THEME from '../theme';
-import { getColors, getComponentStyles } from '../theme/utils';
+import DEFAULT_THEME from '../../theme';
+import { getColors, getComponentStyles } from '../../theme/utils';
 import {
   ALIGN_SELF,
   BREAKPOINT,
   FLEX_NUMBER,
   SPACE,
   TEXT_ALIGN,
-} from './types';
+} from '../types';
 
 const COMPONENT_ID = 'Flex.col';
 
