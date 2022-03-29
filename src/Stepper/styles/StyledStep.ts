@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import DEFAULT_THEME from '../theme';
-import { getComponentStyles } from '../theme/utils';
+import DEFAULT_THEME from '../../theme';
+import { getComponentStyles } from '../../theme/utils';
 import { StyledContent } from './StyledContent';
 import { StyledTail } from './StyledTail';
 import { StyledTitle } from './StyledTitle';
-import { DIRECTION } from './typesEnum';
+import { DIRECTION } from '../typesEnum';
 
 const COMPONENT_ID = 'Stepper.step';
 

@@ -1,7 +1,7 @@
 import styled, { css, DefaultTheme, ThemeProps } from 'styled-components';
-import DEFAULT_THEME from '../theme';
-import { getComponentStyles, getLineHeight } from '../theme/utils';
-import { SIZE, DIRECTION } from './typesEnum';
+import DEFAULT_THEME from '../../theme';
+import { getComponentStyles, getLineHeight } from '../../theme/utils';
+import { SIZE, DIRECTION } from '../typesEnum';
 
 export interface IStyledStepperProps {
   direction?: 'horizontal' | 'vertical';

@@ -1,7 +1,7 @@
 import styled, { ThemeProps, DefaultTheme, css } from 'styled-components';
-import DEFAULT_THEME from '../theme';
-import { getColors, getComponentStyles } from '../theme/utils';
-import { SIZE, DIRECTION, COLOR_TYPE, STATUS } from './typesEnum';
+import DEFAULT_THEME from '../../theme';
+import { getColors, getComponentStyles } from '../../theme/utils';
+import { SIZE, DIRECTION, COLOR_TYPE, STATUS } from '../typesEnum';
 
 const COMPONENT_ID = 'Stepper.step_title';
 

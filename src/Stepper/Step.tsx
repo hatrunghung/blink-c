@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import { useStepperContext } from '../contexts/useStepperContext';
 import { StepContext } from '../contexts/useStepContext';
-import { StyledStep } from './StyledStep';
+import { StyledStep } from './styles/StyledStep';
 
 const Step: FunctionComponent & HTMLAttributes<HTMLDivElement> = props => {
   const { direction, currentIndexRef } = useStepperContext();

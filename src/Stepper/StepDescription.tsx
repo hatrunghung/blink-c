@@ -1,7 +1,7 @@
 import React, { FunctionComponent, HTMLAttributes } from 'react';
 import { useStepContext } from '../contexts/useStepContext';
 import { useStepperContext } from '../contexts/useStepperContext';
-import { StyledDescription } from './StyledDescription';
+import { StyledDescription } from './styles/StyledDescription';
 
 const StepDescription: FunctionComponent &
   HTMLAttributes<HTMLDivElement> = props => {

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import DEFAULT_THEME from '../theme';
-import { getComponentStyles } from '../theme/utils';
-import { DIRECTION, SIZE } from './typesEnum';
+import DEFAULT_THEME from '../../theme';
+import { getComponentStyles } from '../../theme/utils';
+import { DIRECTION, SIZE } from '../typesEnum';
 
 const COMPONENT_ID = 'Stepper.content';
 

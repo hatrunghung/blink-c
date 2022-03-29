@@ -9,7 +9,7 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import { StepperContext } from '../contexts/useStepperContext';
-import { StyledStepper } from './StyledStepper';
+import { StyledStepper } from './styles/StyledStepper';
 import Step from './Step';
 import StepLabel from './StepLabel';
 import StepContent from './StepContent';

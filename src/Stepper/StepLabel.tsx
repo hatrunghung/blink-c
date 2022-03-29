@@ -2,8 +2,8 @@ import React, { FunctionComponent, HTMLAttributes } from 'react';
 import { Check } from 'blinkicon';
 import { useStepContext } from '../contexts/useStepContext';
 import { useStepperContext } from '../contexts/useStepperContext';
-import { StyledTail } from './StyledTail';
-import { StyledIcon } from './StyledIcon';
+import { StyledTail } from './styles/StyledTail';
+import { StyledIcon } from './styles/StyledIcon';
 
 const StepLabel: FunctionComponent & HTMLAttributes<HTMLDivElement> = () => {
   const { direction, size, colorType, activeStep } = useStepperContext();
