@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import DEFAULT_THEME from '../theme';
-import { getComponentStyles } from '../theme/utils';
+import DEFAULT_THEME from '../../theme';
+import { getComponentStyles } from '../../theme/utils';
 
 const COMPONENT_ID = 'Card.thumbnail';
 

@@ -1,5 +1,5 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
-import { StyledCardTitle } from './StyledCardTitle';
+import { StyledCardTitle } from './styles/StyledCardTitle';
 
 const CardTitle = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   (props, ref) => {

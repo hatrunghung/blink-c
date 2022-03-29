@@ -1,8 +1,8 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
 import { useCardContext } from '../contexts/useCardContext';
-import { StyledCardBody } from './StyledCardBody';
-import { StyledCardContent } from './StyledCardContent';
-import { StyledThumbnail } from './StyledThumbnail';
+import { StyledCardBody } from './styles/StyledCardBody';
+import { StyledCardContent } from './styles/StyledCardContent';
+import { StyledThumbnail } from './styles/StyledThumbnail';
 
 const CardBody = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   (props, ref) => {

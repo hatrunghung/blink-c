@@ -7,9 +7,9 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import { CardContext } from '../contexts/useCardContext';
-import { StyledCard } from './StyledCard';
-import { StyledCardWrapper } from './StyledCardWrapper';
-import { StyledImageHeader } from './StyledImageHeader';
+import { StyledCard } from './styles/StyledCard';
+import { StyledCardWrapper } from './styles/StyledCardWrapper';
+import { StyledImageHeader } from './styles/StyledImageHeader';
 import CardTitle from './CardTitle';
 import CardBody from './CardBody';
 import CardAction from './CardAction';
