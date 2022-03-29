@@ -6,6 +6,7 @@ module.exports = {
     'plugin:jest/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
+    'plugin:storybook/recommended',
   ],
   parserOptions: {
     ecmaVersion: 2018,
@@ -13,9 +14,24 @@ module.exports = {
   },
   plugins: ['react-hooks'],
   rules: {
-    'no-unused-expressions': ['error', { allowShortCircuit: true }],
-    'no-irregular-whitespace': ['error', { skipTemplates: true }],
-    'react/prop-types': ['error', { ignore: ['children'] }],
+    'no-unused-expressions': [
+      'error',
+      {
+        allowShortCircuit: true,
+      },
+    ],
+    'no-irregular-whitespace': [
+      'error',
+      {
+        skipTemplates: true,
+      },
+    ],
+    'react/prop-types': [
+      'error',
+      {
+        ignore: ['children'],
+      },
+    ],
     'react/forbid-prop-types': [0],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
