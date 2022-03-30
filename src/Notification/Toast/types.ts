@@ -17,8 +17,8 @@ export type ToastContent = ({
 }) => ReactElement;
 
 export interface IToastOptions<T = any> {
-  id?: string;
   placement: ToastPlacement;
+  autoDismiss?: boolean | number;
   data?: T;
 }
 

@@ -10,6 +10,7 @@ import {
 
 const DEFAULT_TOAST_OPTIONS = {
   placement: 'top-end',
+  autoDismiss: 5000,
 };
 
 export const useToast = (): IUseToastReturnValue => {
@@ -30,7 +31,7 @@ export const useToast = (): IUseToastReturnValue => {
         ...options,
       };
       const newToast: IToast = {
-        id: mergedOptions.id || uid(content),
+        id: uid(content),
         content,
         options: mergedOptions,
       };

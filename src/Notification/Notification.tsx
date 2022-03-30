@@ -18,6 +18,14 @@ export interface INotificationProps extends HTMLAttributes<HTMLDivElement> {
   isAlert?: boolean;
 }
 
+type NotificationComponent = ForwardRefExoticComponent<INotificationProps> &
+  RefAttributes<HTMLDivElement> & {
+    Icon: typeof NotificationIcon;
+    Close: typeof NotificationClose;
+    Title: typeof NotificationTitle;
+    Description: typeof NotificationDescription;
+  };
+
 const Notification = forwardRef<HTMLDivElement, INotificationProps>(
   ({ type, isAlert, children, ...props }, ref) => {
     const value = useMemo(() => ({ type, isAlert }), [type, isAlert]);
@@ -49,16 +57,9 @@ Notification.propTypes = {
   isAlert: PropTypes.bool,
 };
 
-(Notification as any).Icon = NotificationIcon;
-(Notification as any).Close = NotificationClose;
-(Notification as any).Title = NotificationTitle;
-(Notification as any).Description = NotificationDescription;
+(Notification as NotificationComponent).Icon = NotificationIcon;
+(Notification as NotificationComponent).Title = NotificationTitle;
+(Notification as NotificationComponent).Close = NotificationClose;
+(Notification as NotificationComponent).Description = NotificationDescription;
 
-export default Notification as ForwardRefExoticComponent<
-  INotificationProps & RefAttributes<HTMLDivElement>
-> & {
-  Icon: typeof NotificationIcon;
-  Close: typeof NotificationClose;
-  Title: typeof NotificationTitle;
-  Description: typeof NotificationDescription;
-};
+export default Notification as NotificationComponent;
