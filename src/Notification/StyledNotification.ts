@@ -79,7 +79,7 @@ export const StyledNotification = styled.div.attrs<IStyledNotificationProps>({
 })<IStyledNotificationProps>`
   position: relative;
   padding: ${props => `${props.theme.space.sm} ${props.theme.space.xl}`};
-  border-radius: ${props => props.theme.borderRadius.md};
+  border-radius: ${props => props.theme.borderRadius.sm};
 
   ${props => !props.isAlert && boxShadowStyles(props)};
 

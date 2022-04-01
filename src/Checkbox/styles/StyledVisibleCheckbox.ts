@@ -84,7 +84,7 @@ export const StyledVisibleCheckbox = styled.span.attrs<IStyledVisibleCheckboxPro
   border-style: ${props => props.theme.borderStyles.solid};
   border-color: ${props =>
     !props.checked && getColors('neutral', 300, props.theme)};
-  border-radius: ${props => props.theme.borderRadius.md};
+  border-radius: ${props => props.theme.borderRadius.sm};
 
   ${props => getColorStyles(props)};
 

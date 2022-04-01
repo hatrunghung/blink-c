@@ -46,7 +46,7 @@ export const StyledTag = styled.div.attrs<IStyledTagProps>({
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border-radius: ${props => props.theme.borderRadius.sm};
+  border-radius: ${props => props.theme.borderRadius.xs};
   cursor: default;
   height: ${props => props.theme.lineHeights.md};
   line-height: 1;

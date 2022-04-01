@@ -37,7 +37,7 @@ function getBorderRadius(props: IStyledButtonProps & ThemeProps<DefaultTheme>) {
     return '50%';
   }
 
-  return props.theme.borderRadius.md;
+  return props.theme.borderRadius.sm;
 }
 
 export function getHeight(

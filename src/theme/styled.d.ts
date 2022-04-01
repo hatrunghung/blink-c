@@ -12,6 +12,7 @@ declare module 'styled-components' {
       md: (borderColor) => string;
     };
     borderRadius: {
+      xs: string;
       sm: string;
       md: string;
       lg: string;

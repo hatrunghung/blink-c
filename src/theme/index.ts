@@ -19,8 +19,9 @@ const borderStyles = {
 };
 
 const borderRadius = {
-  sm: `${BASE / 2}px`,
-  md: `${BASE}px`,
+  xs: `${BASE / 2}px`,
+  sm: `${BASE}px`,
+  md: `${BASE * 1.5}px`,
   lg: `${BASE * 2}px`,
   xl: `${BASE * 3}px`,
   max: `100%`,
