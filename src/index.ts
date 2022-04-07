@@ -67,4 +67,15 @@ export type { IStepperProps } from './Stepper';
 export { Tag } from './Tag';
 export type { ITagProps } from './Tag';
 
-export { Kbd } from './Typography';
+export {
+  Kbd,
+  HeadingXXXL,
+  HeadingXXL,
+  HeadingXL,
+  HeadingLG,
+  HeadingMD,
+  HeadingSM,
+  HeadingXS,
+} from './Typography';
+
+export type { IHeadingProps } from './Typography';
