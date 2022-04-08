@@ -26,7 +26,7 @@ export const StyledRotateIcon = styled(({ children, ...props }) =>
   height: ${props => props.theme.iconSizes.md};
   vertical-align: middle;
 
-  ${getColorStyles}
+  ${props => getColorStyles(props)}
 
   ${props => getComponentStyles(COMPONENT_ID, props)};
 `;

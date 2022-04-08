@@ -28,9 +28,9 @@ Blackpink and working to fit into real world project.
 - [x] Flag / Notification / Toast
 - [x] Flex
 - [x] Grid
-- [ ] Heading
+- [x] Heading
 - [ ] Input
-- [ ] Kbd
+- [x] Kbd
 - [ ] Label
 - [ ] Masonry
 - [ ] Modal

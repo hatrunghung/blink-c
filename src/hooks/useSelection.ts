@@ -136,7 +136,7 @@ export function useSelection<Item = any>({
   const getContainerProps = ({ role = 'listbox', ...otherProps }) =>
     ({
       role,
-      'blink-container-id': 'container.selection',
+      'data-blink-container-id': 'container.selection',
       ...otherProps,
     } as any);
 

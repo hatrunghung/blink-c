@@ -32,7 +32,7 @@ export function useButtonGroup<Item = any>(
   function getButtonGroupProps({ role = 'group', ...props } = {}) {
     return {
       role,
-      'data-container-id': 'containers.buttonGroup',
+      'data-blink-container-id': 'containers.buttonGroup',
       ...props,
     };
   }

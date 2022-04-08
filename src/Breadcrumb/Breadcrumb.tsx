@@ -3,6 +3,7 @@ import React, {
   cloneElement,
   forwardRef,
   FunctionComponent,
+  ReactElement,
   RefAttributes,
 } from 'react';
 import { useBreadcrumb } from '../hooks';
@@ -22,7 +23,7 @@ export const Breadcrumb: FunctionComponent<
     if (isLastItem) {
       return (
         <StyledBreadcrumbItem>
-          {cloneElement(child as any, currentPageProps)}
+          {cloneElement(child as ReactElement<any>, currentPageProps)}
         </StyledBreadcrumbItem>
       );
     }
