@@ -1,4 +1,9 @@
-import React, { forwardRef, HTMLAttributes, RefAttributes } from 'react';
+import React, {
+  ForwardRefExoticComponent,
+  forwardRef,
+  HTMLAttributes,
+  RefAttributes,
+} from 'react';
 import PropTypes from 'prop-types';
 import { StyledGrid } from './styles/StyledGrid';
 import { Array_Fit, Array_Space, FIT, GRID_NUMBER, SPACE } from './types';
@@ -13,9 +18,9 @@ export interface IGridProps extends HTMLAttributes<HTMLDivElement> {
   rowGap?: SPACE;
 }
 
-type GridComponent = React.ForwardRefExoticComponent<IGridProps> &
+type GridComponent = ForwardRefExoticComponent<IGridProps> &
   RefAttributes<HTMLDivElement> & {
-    Item: React.ForwardRefExoticComponent<IGridItemProps>;
+    Item: ForwardRefExoticComponent<IGridItemProps>;
   };
 
 const Grid = forwardRef<HTMLDivElement, IGridProps>(

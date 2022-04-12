@@ -76,6 +76,7 @@ export {
   HeadingMD,
   HeadingSM,
   HeadingXS,
+  Paragraph,
 } from './Typography';
 
-export type { IHeadingProps } from './Typography';
+export type { IHeadingProps, IParagraphProps } from './Typography';
